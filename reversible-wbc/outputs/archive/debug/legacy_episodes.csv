@@ -1,0 +1,2 @@
+seed,steps,elapsed_sim_time,reached_goal,irreversible,event,shell_triggers,gate_triggers,recovery_actions,exploratory_interactions,boundary_expansions,final_goal_distance,payload_mass,friction,mean_rescue_probability,mean_epistemic_uncertainty,mean_control_latency_us,p95_control_latency_us
+2026,2198,21.98,1,0,none,0,0,0,0,0,0.279091,6.85747,1.18064,0,0,0.266626,0.459

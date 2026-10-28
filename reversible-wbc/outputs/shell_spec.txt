@@ -1,0 +1,20 @@
+Constructed safety shell specification
+control_dt 0.01
+max_linear_speed 0.92
+max_angular_speed 1.2
+max_linear_accel 1.1
+max_angular_accel 1.8
+stop_decel 1.55
+joint_1 [-1.1, 0.95] margin 0.055
+joint_2 [0.05, 2.3] margin 0.055
+support_half_width 0.36
+max_lateral_accel 1.28
+epistemic_authority none_inside_body_shell
+discrete_cases 97200
+counterexamples 0
+recovery_commands 90720
+max_speed_utilization 1.217391304
+max_acceleration_utilization 1.683807404
+max_lateral_utilization 0.94
+max_support_utilization 1
+first_counterexample none

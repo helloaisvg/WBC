@@ -1,0 +1,27 @@
+{
+  "training_samples": 32000,
+  "legacy": {
+    "episodes": 1,
+    "success_rate": 1,
+    "irreversible_event_rate": 0,
+    "shell_trigger_rate": 0,
+    "boundary_expansion_rate": 0,
+    "mean_completion_time": 21.98,
+    "mean_control_latency_us": 0.2666264786,
+    "p95_control_latency_us": 0.459
+  },
+  "reversible": {
+    "episodes": 1,
+    "success_rate": 1,
+    "irreversible_event_rate": 0,
+    "shell_trigger_rate": 0.2511278195,
+    "boundary_expansion_rate": 1,
+    "exploratory_interactions": 15,
+    "boundary_expansions": 15,
+    "mean_completion_time": 26.6,
+    "mean_rescue_probability": 0.5283337975,
+    "mean_epistemic_uncertainty": 0.1089350364,
+    "mean_control_latency_us": 0.5271413534,
+    "p95_control_latency_us": 0.458
+  }
+}

@@ -1,0 +1,11 @@
+seed,steps,elapsed_sim_time,reached_goal,irreversible,event,shell_triggers,gate_triggers,recovery_actions,exploratory_interactions,boundary_expansions,final_goal_distance,payload_mass,friction,mean_rescue_probability,mean_epistemic_uncertainty,mean_control_latency_us,p95_control_latency_us
+73021,2147,21.47,0,1,payload_fall,0,0,0,0,0,0.439156,14.6954,0.896988,0,0,0.384021,0.5
+80940,752,7.52,0,1,payload_fall,0,0,0,0,0,6.95578,10.4385,1.04342,0,0,0.150029,0.208
+88859,1419,14.19,0,1,payload_fall,0,0,0,0,0,3.78263,14.5625,0.828506,0,0,0.160215,0.208
+96778,2198,21.98,1,0,none,0,0,0,0,0,0.279091,12.0409,0.910728,0,0,0.179521,0.209
+104697,752,7.515,0,1,payload_fall,0,0,0,0,0,6.95929,16.5234,0.935998,0,0,0.200153,0.209
+112616,270,2.7,0,1,payload_fall,0,0,0,0,0,8.71957,11.059,0.723661,0,0,0.173322,0.167
+120535,2173,21.725,0,1,payload_fall,0,0,0,0,0,0.354318,12.3522,0.889087,0,0,0.167987,0.208
+128454,271,2.705,0,1,payload_fall,0,0,0,0,0,8.71761,14.5695,0.862217,0,0,0.142982,0.167
+136373,268,2.675,0,1,payload_fall,0,0,0,0,0,8.72944,10.3308,0.92353,0,0,0.14256,0.167
+144292,745,7.445,0,1,payload_fall,0,0,0,0,0,7.00736,16.7151,0.95578,0,0,0.143294,0.208
