@@ -1,0 +1,2 @@
+algorithm,cases,successes,success_rate,avg_plan_ms,avg_trajectory_s,map_size_m,ground_obstacles,floating_obstacles
+MOMA,100,52,0.52,122.17,8.90722,8x8,20,30

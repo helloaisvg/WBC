@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+.DS_Store
+research/runs/*/raw/
+research/runs/*/processed/
+research/runs/*/report/
+research/archive/

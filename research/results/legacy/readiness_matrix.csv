@@ -1,0 +1,4 @@
+mode,scenario,seed,obs_num,float_obs_num,dynamic_obs_num,dynamic_obstacles_seen,launch_exit_code,map_loaded,first_goal_completed,goal_collision_attempts,plans,wall_ms_1,wall_ms_2,init_ms_1,init_ms_2,opt_ms_1,opt_ms_2,margin_m_1,margin_m_2,recovery_slack_s_1,recovery_slack_s_2,replanning_events,recovery_threats,temporal_repairs,collision_warnings,emergency_stops
+remani,exp0,30,20,30,0,0,124,1,1,0,2,492.049,588.825,178.508,280.183,311.784,308.120,-0.1787,-0.1788,-0.4192,0.8171,0,0,0,0,0
+static_shell,exp0,30,20,30,0,0,124,1,1,0,2,487.202,599.924,169.673,286.567,315.645,312.684,-0.2325,-0.2799,-0.4292,0.0222,0,0,0,0,0
+full,exp0,30,20,30,0,0,124,1,1,0,2,402.896,652.155,178.732,287.552,221.871,364.029,-0.0410,-0.0435,-0.0241,0.3845,0,0,0,0,0

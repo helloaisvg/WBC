@@ -1,0 +1,10 @@
+name = "braking"
+description = "Base stopping-distance envelope."
+
+[overrides]
+weight_recoverability = "20000.0"
+weight_recovery_time = "0.0"
+arm_extension_weight = "0.0"
+recovery_tolerance = "0.07"
+recovery_time_tolerance = "10.0"
+use_dynamic_prediction = "true"

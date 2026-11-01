@@ -1,0 +1,10 @@
+name = "remani"
+description = "Collision-only REMANI objective with trajectory-arrival-time querying."
+
+[overrides]
+weight_recoverability = "0.0"
+weight_recovery_time = "0.0"
+arm_extension_weight = "0.0"
+recovery_tolerance = "10.0"
+recovery_time_tolerance = "10.0"
+use_dynamic_prediction = "true"

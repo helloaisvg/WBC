@@ -1,0 +1,6 @@
+name = "exp1_random"
+container_param_file = "/ws/src/plan_manage/config/exp1_random_param.yaml"
+
+[defaults]
+obs_num = 20
+float_obs_num = 30
