@@ -1,16 +1,12 @@
-# REMANI-Planner
+# REMANI-R
 
-**RE**al-time Whole-body Motion Planning for Mobile **MANI**pulators Using Environment-adaptive Search and Spatial-temporal Optimization
+**Recoverability-Aware Spatio-Temporal Planning for Mobile Manipulators**
 
-![top](attachment/top.png)
+REMANI-R extends the REMANI whole-body planning loop with braking-distance
+awareness, joint recovery-time constraints, trajectory-arrival-time dynamic
+obstacle queries, execution-time auditing, and path-preserving temporal repair.
 
-## News
-
-- **Jan 29, 2024**: REMANI-Planner is accepted to [ICRA 2024](https://2024.ieee-icra.org/).
-
-## REMANI-R Extensions
-
-The current workspace is the REMANI-R research mainline:
+## Core Capabilities
 
 - whole-body braking and joint-recovery constraints;
 - a final-time recoverability audit during planning and execution;
@@ -30,6 +26,47 @@ trajectory-arrival time.
 
 [Watch the full-resolution MP4](research/media/fair_remani_r_dynamic.mp4) ·
 [Protocol and three-way results](research/docs/fair_dynamic_benchmark.md)
+
+## Measured Performance
+
+### Dynamic mission
+
+Seeds `30-34`, 20 ground obstacles, 30 floating obstacles, and two crossing
+spheres:
+
+| Metric | REMANI-R |
+|---|---:|
+| Mission success | `5/5` |
+| Mean planning time | `276.8 ms` |
+| P95 planning time | `357.7 ms` |
+| Mean trajectory time | `18.72 s` |
+| Safety violations | `0` |
+| Runtime replans | `0` |
+| Emergency stops | `0` |
+
+### REMANI comparison
+
+| Method | Runs | Mean planning | P95 planning | Safety violations | Emergency stops |
+|---|---:|---:|---:|---:|---:|
+| REMANI | 3 | `214.0 ms` | `289.5 ms` | `9` | `1` |
+| REMANI-R | 3 | `258.4 ms` | `305.5 ms` | `0` | `0` |
+
+### Static regression
+
+| Scene | Seeds | Success | Mean planning | P95 planning | Safety violations |
+|---|---:|---:|---:|---:|---:|
+| `exp0` | 5 | `5/5` | `243.7 ms` | `286.4 ms` | `0` |
+| `exp1_random` | 5 | `5/5` | `235.3 ms` | `293.7 ms` | `0` |
+
+### External baselines
+
+TopAY completed `52/100` cases in its native randomized benchmark, with
+`122.17 ms` mean planning time on successful cases. In the published GCDF
+benchmark at 120 obstacles, REMANI reached `49.6%`, TopAY `51.6%`, GCDF
+`86.8%`, and GCDF with TopAY initialization `91.6%`.
+
+- [TopAY benchmark and environment](research/external/TOPAY_COMPARISON.md)
+- [GCDF published comparison](research/external/GCDF_COMPARISON.md)
 
 ## Research Pipeline
 
@@ -64,122 +101,74 @@ Core technical notes:
 - [Performance](research/docs/PERFORMANCE.md)
 - [Experiments](research/docs/EXPERIMENTS.md)
 
-The original-REMANI comparison laboratory remains external at
-`/Users/xxx/Desktop/remani-bench`.
+## Build and Run
 
-## Introduction
+Environment: Ubuntu 20.04, ROS Noetic, x86_64.
 
-REMANI-Planner presents a motion planning method capable of generating high-quality, safe, agile and feasible trajectories for mobile manipulators in real time.
-
-![system_overview](./attachment/system_overview.png)
-
-**Authors**: [Chengkai Wu](https://chengkaiwu.me/)\*, [Ruilin Wang](https://github.com/Ruilin-W)\*, [Mianzhi Song](https://robotics-star.com/), [Fei Gao](http://zju-fast.com/fei-gao/), [Jie Mei](https://scholar.google.com/citations?user=tyQm5IkAAAAJ&hl=zh-CN) and [Boyu Zhou](https://robotics-star.com/)$^{\dagger}$.
-
-**Institutions**: [STAR Group](https://robotics-star.com/), [HITSZ MAS Lab](https://hitsz-mas.github.io/mas-lab-website/) and [ZJU FAST Lab](http://zju-fast.com/).
-
-**Video**: [YouTube](https://www.youtube.com/watch?v=iYdAEZ3z11s), [Bilibili](https://www.bilibili.com/video/BV1Wz4y1V7vL).
-
-**Paper**: [Real-time Whole-body Motion Planning for Mobile Manipulators Using Environment-adaptive Search and Spatial-temporal Optimization](https://ieeexplore.ieee.org/document/10610192), 2024 IEEE International Conference on Robotics and Automation (ICRA).
-
-```
-@INPROCEEDINGS{10610192,
-  author={Wu, Chengkai and Wang, Ruilin and Song, Mianzhi and Gao, Fei and Mei, Jie and Zhou, Boyu},
-  booktitle={2024 IEEE International Conference on Robotics and Automation (ICRA)}, 
-  title={Real-time Whole-body Motion Planning for Mobile Manipulators Using Environment-adaptive Search and Spatial-temporal Optimization}, 
-  year={2024},
-  volume={},
-  number={},
-  pages={1369-1375},
-  keywords={Service robots;Dynamics;Transportation;Real-time systems;Planning;Safety;Complexity theory},
-  doi={10.1109/ICRA57147.2024.10610192}}
-```
-
-If you find this work useful or interesting, please kindly give us a star ⭐, thanks!😀
-
-## Setup
-
-Compiling tests passed on Ubuntu 20.04 with ROS installed.
-
-### Prerequisites
-
-- [ROS](http://wiki.ros.org/ROS/Installation) (tested with Noetic)
-
-```
+```bash
 sudo apt install libompl-dev libeigen3-dev
-cd /usr/include
-sudo ln -sf eigen3/Eigen Eigen
-sudo ln -sf eigen3/unsupported unsupported
-```
-
-### Compiling and Running
-
-```
-cd ${your catkin workspace}/src
-git clone -b master --single-branch https://github.com/SYSU-STAR/REMANI-Planner.git
-cd ..
+mkdir -p ~/remani_ws/src
+cd ~/remani_ws/src
+git clone https://github.com/helloaisvg/WBC.git remani-r
+cd ~/remani_ws
 catkin_make -DCMAKE_BUILD_TYPE=Release
-```
-
-1. Navigating in dense cuboids map
-
-```
 source devel/setup.bash
+```
+
+Static dense-cuboid and bridge scenes:
+
+```bash
 roslaunch remani_planner exp0.launch
-```
-
-You should see the simulation in rviz. You can use the `2D Nav Goal` to send a trigger to start navigation.
-
-<p align="center">
-  <img src="./attachment/exp0_0.gif"/>
-</p>
-
-
-2. Navigating through a bridge
-
-```
-source devel/setup.bash
 roslaunch remani_planner exp1.launch
 ```
 
-<p align="center">
-  <img src="./attachment/exp0_1.gif"/>
-</p>
+Dynamic scenes:
 
+```bash
+roslaunch remani_planner dynamic_exp0.launch
+roslaunch remani_planner dynamic_exp1.launch
+```
 
-## Customize your own Mobile Manipulator (MM)
+## Robot Configuration
 
-1. Make the following adjustments in the `remani_planner/mm_config/src/mm_config.cpp` file:
-   - Modify the `getAJointTran` function to calculate the homogeneous transformation between different frames of the manipulator.
-   - Modify the `setLinkPoint` function to set the position of collision spheres in the respective frame.
-   - Modify the `getMMMarkerArray` function based on the urdf file to generate the marker array for MM visualization.
-2. Adapt the `mm_param.yaml` file located in the `remani_planner/remani_planner/config/` directory to configure parameters specific to your MM.
+The FastArmer model is the default configuration. The UR5 example is included
+in [`mm_param.yaml`](remani_planner/plan_manage/config/mm_param.yaml).
 
+Robot geometry and visualization are implemented in:
 
+- [`mm_config.cpp`](remani_planner/mm_config/src/mm_config.cpp)
+- [`remani_planner_param.yaml`](remani_planner/plan_manage/config/remani_planner_param.yaml)
 
-**Note**: We have provided an example for the [UR5](https://www.universal-robots.com/products/ur5-robot/) in our code. To use the UR5, simply follow these steps:
+## Results and Data
 
-1. Open the `mm_param.yaml` file located in the `remani_planner/plan_manage/config/` directory.
-2. Locate the `parameter` for `FastArmer` and comment it out by adding a "#" symbol at the beginning of the line.
-3. Uncomment the `parameter` for `UR5` by removing the "#" symbol at the beginning of the line.
-4. You are now ready to conduct above experiments with a mobile base incorporating the UR5 configuration.
+- Canonical final tables: [`research/results/canonical`](research/results/canonical)
+- Ablation and baseline tables: [`research/results/tables`](research/results/tables)
+- External comparisons: [`research/external`](research/external)
+- Final videos: [`research/media`](research/media)
+- Figures and contact sheets: [`research/figures`](research/figures)
 
-<p align="center">
-  <img src="./attachment/exp1_0.gif" width = "400" height = "225"/>
-  <img src="./attachment/exp1_1.gif" width = "400" height = "225"/>
-</p>
+## Upstream REMANI
 
-## Acknowledgements
+REMANI-R builds on the REMANI whole-body planner presented at ICRA 2024:
 
-We use [MINCO](https://github.com/ZJU-FAST-Lab/GCOPTER) as our trajectory representation.
+> Real-time Whole-body Motion Planning for Mobile Manipulators Using
+> Environment-adaptive Search and Spatial-temporal Optimization
 
-We borrow the framework from [AutoTrans](https://github.com/SYSU-STAR/AutoTrans).
+- Authors: Chengkai Wu, Ruilin Wang, Mianzhi Song, Fei Gao, Jie Mei, and Boyu Zhou
+- Paper: [IEEE Xplore](https://ieeexplore.ieee.org/document/10610192)
+- DOI: [10.1109/ICRA57147.2024.10610192](https://doi.org/10.1109/ICRA57147.2024.10610192)
 
-We would like to thank colleagues at [Huawei](https://www.huawei.com/en/) for their support for this work: Zehui Meng and Changjin Wang.
+```bibtex
+@INPROCEEDINGS{10610192,
+  author={Wu, Chengkai and Wang, Ruilin and Song, Mianzhi and Gao, Fei and Mei, Jie and Zhou, Boyu},
+  booktitle={2024 IEEE International Conference on Robotics and Automation (ICRA)},
+  title={Real-time Whole-body Motion Planning for Mobile Manipulators Using Environment-adaptive Search and Spatial-temporal Optimization},
+  year={2024},
+  pages={1369-1375},
+  doi={10.1109/ICRA57147.2024.10610192}
+}
+```
 
-## License
-
-The source code is released under the [GPLv3](https://www.gnu.org/licenses/) license.
-
-## Maintenance
-
-For any technical issues, please contact Chengkai Wu([chengkaiwuu@gmail.com](mailto:chengkaiwuu@gmail.com)) or Ruilin Wang(Ruilinin@outlook.com).
+MINCO and AutoTrans provide the trajectory and planning framework used by the
+upstream implementation. The source is released under the
+[GPLv3](https://www.gnu.org/licenses/) license.
