@@ -1,0 +1,601 @@
+... logging to /root/.ros/log/fbd5dd02-d5f3-11f1-a48f-5e358cbe3d51/roslaunch-d7708c7360c8-51273.log
+Checking log directory for disk usage. This may take a while.
+Press Ctrl-C to interrupt
+Done checking log file disk usage. Usage is <1GB.
+]2;/ws/src/lns_remani/remani_planner/plan_manage/launch/bridge_ablation.launch
+[1mstarted roslaunch server http://d7708c7360c8:46733/[0m
+
+SUMMARY
+========
+
+PARAMETERS
+ * /bridge_ablation_probe/benchmark/bridge_height: 0.4
+ * /bridge_ablation_probe/benchmark/budget_ms: 600
+ * /bridge_ablation_probe/benchmark/fallback_mode: global_single
+ * /bridge_ablation_probe/benchmark/frontend_only: True
+ * /bridge_ablation_probe/benchmark/seed_offset: 0
+ * /bridge_ablation_probe/benchmark/trials: 25
+ * /bridge_ablation_probe/fsm/emergency_time: 1.5
+ * /bridge_ablation_probe/fsm/global_plan: True
+ * /bridge_ablation_probe/fsm/init_gripper_close: False
+ * /bridge_ablation_probe/fsm/init_state: [-2.0, 1.5, 0.0, ...
+ * /bridge_ablation_probe/fsm/init_yaw: 0.0
+ * /bridge_ablation_probe/fsm/planning_horizon: 5.0
+ * /bridge_ablation_probe/fsm/replan_trajectory_time: 1.7
+ * /bridge_ablation_probe/fsm/target_type: 2
+ * /bridge_ablation_probe/fsm/thresh_replan_time: 2.5
+ * /bridge_ablation_probe/fsm/time_for_gripper: 0.05
+ * /bridge_ablation_probe/fsm/waypoint0: [2.0, 1.5, 0.0, -...
+ * /bridge_ablation_probe/fsm/waypoint0_gripper_close: True
+ * /bridge_ablation_probe/fsm/waypoint0_yaw: 0.0
+ * /bridge_ablation_probe/fsm/waypoint1: [-2.0, 1.5, 0.0, ...
+ * /bridge_ablation_probe/fsm/waypoint1_gripper_close: False
+ * /bridge_ablation_probe/fsm/waypoint1_yaw: 180.0
+ * /bridge_ablation_probe/fsm/waypoint_num: 2
+ * /bridge_ablation_probe/grid_map/esdf_slice_height: -0.1
+ * /bridge_ablation_probe/grid_map/frame_id: world
+ * /bridge_ablation_probe/grid_map/ground_height: -0.01
+ * /bridge_ablation_probe/grid_map/local_bound_inflate: 0.0
+ * /bridge_ablation_probe/grid_map/local_map_margin: 15.0
+ * /bridge_ablation_probe/grid_map/local_update_range_x: 17.0
+ * /bridge_ablation_probe/grid_map/local_update_range_y: 17.0
+ * /bridge_ablation_probe/grid_map/local_update_range_z: 3.0
+ * /bridge_ablation_probe/grid_map/map_size_x: 20.0
+ * /bridge_ablation_probe/grid_map/map_size_y: 8.0
+ * /bridge_ablation_probe/grid_map/map_size_z: 3.0
+ * /bridge_ablation_probe/grid_map/max_ray_length: 20.0
+ * /bridge_ablation_probe/grid_map/min_ray_length: 0.1
+ * /bridge_ablation_probe/grid_map/obstacles_inflation: 0.0
+ * /bridge_ablation_probe/grid_map/p_hit: 0.65
+ * /bridge_ablation_probe/grid_map/p_max: 0.9
+ * /bridge_ablation_probe/grid_map/p_min: 0.12
+ * /bridge_ablation_probe/grid_map/p_miss: 0.35
+ * /bridge_ablation_probe/grid_map/p_occ: 0.8
+ * /bridge_ablation_probe/grid_map/pose_type: 1
+ * /bridge_ablation_probe/grid_map/resolution: 0.05
+ * /bridge_ablation_probe/grid_map/use_global_map: True
+ * /bridge_ablation_probe/grid_map/use_load_map: True
+ * /bridge_ablation_probe/grid_map/virtual_ceil_height: 4.0
+ * /bridge_ablation_probe/grid_map/visualization_truncate_height: 2.8
+ * /bridge_ablation_probe/grid_map/z_length: 0.0
+ * /bridge_ablation_probe/manager/control_points_distance: 0.4
+ * /bridge_ablation_probe/manager/feasibility_tolerance: 0.05
+ * /bridge_ablation_probe/manager/polyTraj_piece_length: 2.0
+ * /bridge_ablation_probe/map/map_type: 1
+ * /bridge_ablation_probe/mm/base_mani_fixed_joint_xyz_ypr: [0.0, 0.0, 0.0, 0...
+ * /bridge_ablation_probe/mm/manipulator_config: [0.176, 0.417, 0....
+ * /bridge_ablation_probe/mm/manipulator_dof: 6
+ * /bridge_ablation_probe/mm/manipulator_max_acc: 3.14
+ * /bridge_ablation_probe/mm/manipulator_max_pos: [3.052, 0.001, 3....
+ * /bridge_ablation_probe/mm/manipulator_max_vel: 1.57
+ * /bridge_ablation_probe/mm/manipulator_min_pos: [-3.062, -3.136, ...
+ * /bridge_ablation_probe/mm/manipulator_thickness: 0.03
+ * /bridge_ablation_probe/mm/mobile_base_check_radius: 0.17
+ * /bridge_ablation_probe/mm/mobile_base_dof: 2
+ * /bridge_ablation_probe/mm/mobile_base_height: 0.23
+ * /bridge_ablation_probe/mm/mobile_base_length: 0.5
+ * /bridge_ablation_probe/mm/mobile_base_max_wheel_alpha: 20.0
+ * /bridge_ablation_probe/mm/mobile_base_max_wheel_omega: 10.0
+ * /bridge_ablation_probe/mm/mobile_base_non_singul_vel: 0.05
+ * /bridge_ablation_probe/mm/mobile_base_wheel_base: 0.37
+ * /bridge_ablation_probe/mm/mobile_base_wheel_radius: 0.07
+ * /bridge_ablation_probe/mm/mobile_base_width: 0.5
+ * /bridge_ablation_probe/mm/use_fast_armer: True
+ * /bridge_ablation_probe/optimization/constrain_points_perPiece: 16
+ * /bridge_ablation_probe/optimization/dense_sample_resolution: 16
+ * /bridge_ablation_probe/optimization/ground_safe_dis: 0.03
+ * /bridge_ablation_probe/optimization/ground_safe_margin: 0.03
+ * /bridge_ablation_probe/optimization/max_iterations: 250
+ * /bridge_ablation_probe/optimization/max_time: 0.2
+ * /bridge_ablation_probe/optimization/mobile_base_opt_gear: True
+ * /bridge_ablation_probe/optimization/safe_margin: 0.1
+ * /bridge_ablation_probe/optimization/safe_margin_mani: 0.1
+ * /bridge_ablation_probe/optimization/self_safe_margin: 0.1
+ * /bridge_ablation_probe/optimization/weight_base_feasibility: 100.0
+ * /bridge_ablation_probe/optimization/weight_manipulator_feasibility: 100.0
+ * /bridge_ablation_probe/optimization/weight_manipulator_self: 1000.0
+ * /bridge_ablation_probe/optimization/weight_obstacle: 50000.0
+ * /bridge_ablation_probe/optimization/weight_time: 1.0
+ * /bridge_ablation_probe/search/allocate_num: 100000
+ * /bridge_ablation_probe/search/check_num: 16
+ * /bridge_ablation_probe/search/curvatureDisCoe: 0.4
+ * /bridge_ablation_probe/search/dist_resolution: 0.6
+ * /bridge_ablation_probe/search/fallback_mode: global_single
+ * /bridge_ablation_probe/search/goal_rate: 0.4
+ * /bridge_ablation_probe/search/lambda_heu: 1
+ * /bridge_ablation_probe/search/local_base_margin: 1.0
+ * /bridge_ablation_probe/search/local_planner: ompl_rrtconnect
+ * /bridge_ablation_probe/search/max_arc: 0.4
+ * /bridge_ablation_probe/search/max_loop_num: 5000
+ * /bridge_ablation_probe/search/max_mani_search_time: 0.05
+ * /bridge_ablation_probe/search/max_sample_time: 0.2
+ * /bridge_ablation_probe/search/max_seach_time: 0.5
+ * /bridge_ablation_probe/search/min_turning_radius: 0.2
+ * /bridge_ablation_probe/search/oneshot_check_len: 0.02
+ * /bridge_ablation_probe/search/oneshot_range: 1.0
+ * /bridge_ablation_probe/search/rrt_step_time: 0.15
+ * /bridge_ablation_probe/search/sample_time: 0.1
+ * /bridge_ablation_probe/search/traj_back_penalty: 3.0
+ * /bridge_ablation_probe/search/traj_forward_penalty: 1.0
+ * /bridge_ablation_probe/search/traj_gear_switch_penalty: 10.0
+ * /bridge_ablation_probe/search/traj_steer_change_penalty: 2.0
+ * /bridge_ablation_probe/search/traj_steer_penalty: 5.0
+ * /bridge_ablation_probe/search/try_astar_times: 10
+ * /bridge_ablation_probe/search/yaw_resolution: 3.15
+ * /fake_mm/fsm/init_gripper_close: False
+ * /fake_mm/fsm/init_state: [-2.0, 1.5, 0.0, ...
+ * /fake_mm/fsm/init_yaw: 0.0
+ * /fake_mm/fsm/waypoint0: [2.0, 1.5, 0.0, -...
+ * /fake_mm/fsm/waypoint0_gripper_close: True
+ * /fake_mm/fsm/waypoint0_yaw: 0.0
+ * /fake_mm/fsm/waypoint1: [-2.0, 1.5, 0.0, ...
+ * /fake_mm/fsm/waypoint1_gripper_close: False
+ * /fake_mm/fsm/waypoint1_yaw: 180.0
+ * /fake_mm/fsm/waypoint_num: 2
+ * /fake_mm/map/map_type: 1
+ * /fake_mm/mm/base_mani_fixed_joint_xyz_ypr: [0.0, 0.0, 0.0, 0...
+ * /fake_mm/mm/manipulator_config: [0.176, 0.417, 0....
+ * /fake_mm/mm/manipulator_dof: 6
+ * /fake_mm/mm/manipulator_max_acc: 3.14
+ * /fake_mm/mm/manipulator_max_pos: [3.052, 0.001, 3....
+ * /fake_mm/mm/manipulator_max_vel: 1.57
+ * /fake_mm/mm/manipulator_min_pos: [-3.062, -3.136, ...
+ * /fake_mm/mm/manipulator_thickness: 0.03
+ * /fake_mm/mm/mobile_base_check_radius: 0.17
+ * /fake_mm/mm/mobile_base_dof: 2
+ * /fake_mm/mm/mobile_base_height: 0.23
+ * /fake_mm/mm/mobile_base_length: 0.5
+ * /fake_mm/mm/mobile_base_max_wheel_alpha: 20.0
+ * /fake_mm/mm/mobile_base_max_wheel_omega: 10.0
+ * /fake_mm/mm/mobile_base_non_singul_vel: 0.05
+ * /fake_mm/mm/mobile_base_wheel_base: 0.37
+ * /fake_mm/mm/mobile_base_wheel_radius: 0.07
+ * /fake_mm/mm/mobile_base_width: 0.5
+ * /fake_mm/mm/use_fast_armer: True
+ * /map_generator/fsm/init_gripper_close: False
+ * /map_generator/fsm/init_state: [-2.0, 1.5, 0.0, ...
+ * /map_generator/fsm/init_yaw: 0.0
+ * /map_generator/fsm/waypoint0: [2.0, 1.5, 0.0, -...
+ * /map_generator/fsm/waypoint0_gripper_close: True
+ * /map_generator/fsm/waypoint0_yaw: 0.0
+ * /map_generator/fsm/waypoint1: [-2.0, 1.5, 0.0, ...
+ * /map_generator/fsm/waypoint1_gripper_close: False
+ * /map_generator/fsm/waypoint1_yaw: 180.0
+ * /map_generator/fsm/waypoint_num: 2
+ * /map_generator/map/bridge_height: 0.4
+ * /map_generator/map/map_type: 1
+ * /map_generator/map/resolution: 0.05
+ * /map_generator/map/seed: 30
+ * /map_generator/map/x_size: 8.0
+ * /map_generator/map/y_size: 8.0
+ * /map_generator/map/z_size: 3.0
+ * /map_generator/mm/base_mani_fixed_joint_xyz_ypr: [0.0, 0.0, 0.0, 0...
+ * /map_generator/mm/manipulator_config: [0.176, 0.417, 0....
+ * /map_generator/mm/manipulator_dof: 6
+ * /map_generator/mm/manipulator_max_acc: 3.14
+ * /map_generator/mm/manipulator_max_pos: [3.052, 0.001, 3....
+ * /map_generator/mm/manipulator_max_vel: 1.57
+ * /map_generator/mm/manipulator_min_pos: [-3.062, -3.136, ...
+ * /map_generator/mm/manipulator_thickness: 0.03
+ * /map_generator/mm/mobile_base_check_radius: 0.17
+ * /map_generator/mm/mobile_base_dof: 2
+ * /map_generator/mm/mobile_base_height: 0.23
+ * /map_generator/mm/mobile_base_length: 0.5
+ * /map_generator/mm/mobile_base_max_wheel_alpha: 20.0
+ * /map_generator/mm/mobile_base_max_wheel_omega: 10.0
+ * /map_generator/mm/mobile_base_non_singul_vel: 0.05
+ * /map_generator/mm/mobile_base_wheel_base: 0.37
+ * /map_generator/mm/mobile_base_wheel_radius: 0.07
+ * /map_generator/mm/mobile_base_width: 0.5
+ * /map_generator/mm/use_fast_armer: True
+ * /map_generator/pub_rate: 10.0
+ * /rosdistro: noetic
+ * /rosversion: 1.17.4
+
+NODES
+  /
+    bridge_ablation_probe (remani_planner/bridge_ablation_probe)
+    fake_mm (fake_mm/fake_mm)
+    map_generator (map_generator/map_generator)
+[33m[WARN] [1793537931.165087966]: Finished generate Bridge Map [0m
+BRIDGE_FREE,height=0.4,free=0,samples=4096
+continous_failures_count: 0
+[0m[INFO] [1793537931.973857883]: [bridge ablation] mode=1 astar=1 initial_search=0[0m
+[0m[INFO] [1793537931.976813174]: [bridge ablation] fallback_start=1 fallback_goal=1[0m
+[0m[INFO] [1793537931.976943466]: [bridge ablation] free_start=1 free_goal=1[0m
+[0m[INFO] [1793537931.977247008]: [bridge ablation] direct_pair=0[0m
+[0m[INFO] [1793537931.978290424]: [bridge ablation] free_via=0 via_pair=0[0m
+Error:   Random number generation already started. Changing seed now will not lead to deterministic sampling.
+         at line 78 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/util/src/RandomNumbers.cpp
+Debug:   RRTConnect: Planner range detected to be 2.735702
+Info:    RRTConnect: Starting planning with 1 states already in datastructure
+Info:    RRTConnect: Created 1656 states (840 start + 816 goal)
+Info:    ProblemDefinition: Adding approximate solution from planner RRTConnect
+[0m[INFO] [1793537932.188569799]: [OMPL RRT-Connect] success states=4 time=201.101[0m
+[0m[INFO] [1793537932.189833049]: [bridge ablation] rrt_connect=1 path_nodes=4[0m
+BRIDGE_RESULT,height=0.400000,mode=global_single,frontend_only=1,trial=0,seed=7000,start_y=1.500000,goal_y=1.500000,success=1,planned=1,within_budget=1,wall_ms=384.445583,init_ms=-1.000000,optimize_ms=-1.000000
+continous_failures_count: 0
+[0m[INFO] [1793537932.376058258]: [bridge ablation] mode=1 astar=1 initial_search=0[0m
+[0m[INFO] [1793537932.376150925]: [bridge ablation] fallback_start=1 fallback_goal=1[0m
+[0m[INFO] [1793537932.376176383]: [bridge ablation] free_start=1 free_goal=1[0m
+[0m[INFO] [1793537932.376299841]: [bridge ablation] direct_pair=0[0m
+[0m[INFO] [1793537932.377207258]: [bridge ablation] free_via=0 via_pair=0[0m
+Error:   Random number generation already started. Changing seed now will not lead to deterministic sampling.
+         at line 78 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/util/src/RandomNumbers.cpp
+Debug:   RRTConnect: Planner range detected to be 2.735702
+Info:    RRTConnect: Starting planning with 1 states already in datastructure
+Info:    RRTConnect: Created 1678 states (845 start + 833 goal)
+Info:    ProblemDefinition: Adding approximate solution from planner RRTConnect
+[0m[INFO] [1793537932.577691050]: [OMPL RRT-Connect] success states=7 time=200.108[0m
+[0m[INFO] [1793537932.577946258]: [bridge ablation] rrt_connect=1 path_nodes=7[0m
+BRIDGE_RESULT,height=0.400000,mode=global_single,frontend_only=1,trial=1,seed=7001,start_y=1.500000,goal_y=1.500000,success=1,planned=1,within_budget=1,wall_ms=357.661750,init_ms=-1.000000,optimize_ms=-1.000000
+continous_failures_count: 0
+[0m[INFO] [1793537932.761251675]: [bridge ablation] mode=1 astar=1 initial_search=0[0m
+[0m[INFO] [1793537932.761329716]: [bridge ablation] fallback_start=1 fallback_goal=1[0m
+[0m[INFO] [1793537932.761368466]: [bridge ablation] free_start=1 free_goal=1[0m
+[0m[INFO] [1793537932.761497841]: [bridge ablation] direct_pair=0[0m
+[0m[INFO] [1793537932.762441300]: [bridge ablation] free_via=0 via_pair=0[0m
+Debug:   RRTConnect: Planner range detected to be 2.735702
+Error:   Random number generation already started. Changing seed now will not lead to deterministic sampling.
+         at line 78 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/util/src/RandomNumbers.cpp
+Info:    RRTConnect: Starting planning with 1 states already in datastructure
+Info:    RRTConnect: Created 1685 states (809 start + 876 goal)
+Info:    ProblemDefinition: Adding approximate solution from planner RRTConnect
+[0m[INFO] [1793537932.962810425]: [OMPL RRT-Connect] success states=8 time=200.044[0m
+[0m[INFO] [1793537932.963185592]: [bridge ablation] rrt_connect=1 path_nodes=8[0m
+BRIDGE_RESULT,height=0.400000,mode=global_single,frontend_only=1,trial=2,seed=7002,start_y=1.500000,goal_y=1.500000,success=1,planned=1,within_budget=1,wall_ms=356.856917,init_ms=-1.000000,optimize_ms=-1.000000
+continous_failures_count: 0
+[0m[INFO] [1793537933.147764675]: [bridge ablation] mode=1 astar=1 initial_search=0[0m
+[0m[INFO] [1793537933.147841467]: [bridge ablation] fallback_start=1 fallback_goal=1[0m
+[0m[INFO] [1793537933.147863800]: [bridge ablation] free_start=1 free_goal=1[0m
+[0m[INFO] [1793537933.147978383]: [bridge ablation] direct_pair=0[0m
+[0m[INFO] [1793537933.148850717]: [bridge ablation] free_via=0 via_pair=0[0m
+Debug:   RRTConnect: Planner range detected to be 2.735702
+Info:    RRTConnect: Starting planning with 1 states already in datastructure
+Error:   Random number generation already started. Changing seed now will not lead to deterministic sampling.
+         at line 78 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/util/src/RandomNumbers.cpp
+Info:    RRTConnect: Created 1673 states (825 start + 848 goal)
+Info:    ProblemDefinition: Adding approximate solution from planner RRTConnect
+[0m[INFO] [1793537933.349201008]: [OMPL RRT-Connect] success states=8 time=200.068[0m
+[0m[INFO] [1793537933.349523050]: [bridge ablation] rrt_connect=1 path_nodes=8[0m
+BRIDGE_RESULT,height=0.400000,mode=global_single,frontend_only=1,trial=3,seed=7003,start_y=1.500000,goal_y=1.500000,success=1,planned=1,within_budget=1,wall_ms=357.723125,init_ms=-1.000000,optimize_ms=-1.000000
+continous_failures_count: 0
+[0m[INFO] [1793537933.536446008]: [bridge ablation] mode=1 astar=1 initial_search=0[0m
+[0m[INFO] [1793537933.536540758]: [bridge ablation] fallback_start=1 fallback_goal=1[0m
+[0m[INFO] [1793537933.536568675]: [bridge ablation] free_start=1 free_goal=1[0m
+[0m[INFO] [1793537933.536698050]: [bridge ablation] direct_pair=0[0m
+[0m[INFO] [1793537933.537711258]: [bridge ablation] free_via=0 via_pair=0[0m
+Debug:   RRTConnect: Planner range detected to be 2.735702
+Info:    RRTConnect: Starting planning with 1 states already in datastructure
+Error:   Random number generation already started. Changing seed now will not lead to deterministic sampling.
+         at line 78 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/util/src/RandomNumbers.cpp
+Info:    RRTConnect: Created 1672 states (836 start + 836 goal)
+Info:    ProblemDefinition: Adding approximate solution from planner RRTConnect
+[0m[INFO] [1793537933.738118967]: [OMPL RRT-Connect] success states=3 time=200.114[0m
+[0m[INFO] [1793537933.738341759]: [bridge ablation] rrt_connect=1 path_nodes=3[0m
+BRIDGE_RESULT,height=0.400000,mode=global_single,frontend_only=1,trial=4,seed=7004,start_y=1.500000,goal_y=1.500000,success=1,planned=1,within_budget=1,wall_ms=360.702958,init_ms=-1.000000,optimize_ms=-1.000000
+continous_failures_count: 0
+[0m[INFO] [1793537933.924467634]: [bridge ablation] mode=1 astar=1 initial_search=0[0m
+[0m[INFO] [1793537933.924554509]: [bridge ablation] fallback_start=1 fallback_goal=1[0m
+[0m[INFO] [1793537933.924580675]: [bridge ablation] free_start=1 free_goal=1[0m
+[0m[INFO] [1793537933.924705300]: [bridge ablation] direct_pair=0[0m
+[0m[INFO] [1793537933.925578592]: [bridge ablation] free_via=0 via_pair=0[0m
+Debug:   RRTConnect: Planner range detected to be 2.735702
+Info:    RRTConnect: Starting planning with 1 states already in datastructure
+Error:   Random number generation already started. Changing seed now will not lead to deterministic sampling.
+         at line 78 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/util/src/RandomNumbers.cpp
+Info:    RRTConnect: Created 1670 states (823 start + 847 goal)
+Info:    ProblemDefinition: Adding approximate solution from planner RRTConnect
+[0m[INFO] [1793537934.125967759]: [OMPL RRT-Connect] success states=3 time=200.116[0m
+[0m[INFO] [1793537934.126291675]: [bridge ablation] rrt_connect=1 path_nodes=3[0m
+BRIDGE_RESULT,height=0.400000,mode=global_single,frontend_only=1,trial=5,seed=7005,start_y=1.500000,goal_y=1.500000,success=1,planned=1,within_budget=1,wall_ms=357.548208,init_ms=-1.000000,optimize_ms=-1.000000
+continous_failures_count: 0
+[0m[INFO] [1793537934.311703134]: [bridge ablation] mode=1 astar=1 initial_search=0[0m
+[0m[INFO] [1793537934.311786092]: [bridge ablation] fallback_start=1 fallback_goal=1[0m
+[0m[INFO] [1793537934.311807634]: [bridge ablation] free_start=1 free_goal=1[0m
+[0m[INFO] [1793537934.311922592]: [bridge ablation] direct_pair=0[0m
+[0m[INFO] [1793537934.312795467]: [bridge ablation] free_via=0 via_pair=0[0m
+Debug:   RRTConnect: Planner range detected to be 2.735702
+Info:    RRTConnect: Starting planning with 1 states already in datastructure
+Error:   Random number generation already started. Changing seed now will not lead to deterministic sampling.
+         at line 78 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/util/src/RandomNumbers.cpp
+Info:    RRTConnect: Created 1661 states (812 start + 849 goal)
+Info:    ProblemDefinition: Adding approximate solution from planner RRTConnect
+[0m[INFO] [1793537934.513139092]: [OMPL RRT-Connect] success states=2 time=200.074[0m
+[0m[INFO] [1793537934.513394509]: [bridge ablation] rrt_connect=1 path_nodes=2[0m
+BRIDGE_RESULT,height=0.400000,mode=global_single,frontend_only=1,trial=6,seed=7006,start_y=1.500000,goal_y=1.500000,success=1,planned=1,within_budget=1,wall_ms=359.005376,init_ms=-1.000000,optimize_ms=-1.000000
+continous_failures_count: 0
+[0m[INFO] [1793537934.698638134]: [bridge ablation] mode=1 astar=1 initial_search=0[0m
+[0m[INFO] [1793537934.698725967]: [bridge ablation] fallback_start=1 fallback_goal=1[0m
+[0m[INFO] [1793537934.698750884]: [bridge ablation] free_start=1 free_goal=1[0m
+[0m[INFO] [1793537934.698868301]: [bridge ablation] direct_pair=0[0m
+[0m[INFO] [1793537934.699719092]: [bridge ablation] free_via=0 via_pair=0[0m
+Debug:   RRTConnect: Planner range detected to be 2.735702
+Info:    RRTConnect: Starting planning with 1 states already in datastructure
+Error:   Random number generation already started. Changing seed now will not lead to deterministic sampling.
+         at line 78 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/util/src/RandomNumbers.cpp
+Info:    RRTConnect: Created 1682 states (821 start + 861 goal)
+Info:    ProblemDefinition: Adding approximate solution from planner RRTConnect
+[0m[INFO] [1793537934.900070092]: [OMPL RRT-Connect] success states=5 time=200.075[0m
+[0m[INFO] [1793537934.900420176]: [bridge ablation] rrt_connect=1 path_nodes=5[0m
+BRIDGE_RESULT,height=0.400000,mode=global_single,frontend_only=1,trial=7,seed=7007,start_y=1.500000,goal_y=1.500000,success=1,planned=1,within_budget=1,wall_ms=358.078375,init_ms=-1.000000,optimize_ms=-1.000000
+Error:   Random number generation already started. Changing seed now will not lead to deterministic sampling.
+         at line 78 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/util/src/RandomNumbers.cpp
+continous_failures_count: 0
+[0m[INFO] [1793537935.087008593]: [bridge ablation] mode=1 astar=1 initial_search=0[0m
+[0m[INFO] [1793537935.087185134]: [bridge ablation] fallback_start=1 fallback_goal=1[0m
+[0m[INFO] [1793537935.087208759]: [bridge ablation] free_start=1 free_goal=1[0m
+[0m[INFO] [1793537935.087323718]: [bridge ablation] direct_pair=0[0m
+[0m[INFO] [1793537935.088179551]: [bridge ablation] free_via=0 via_pair=0[0m
+Debug:   RRTConnect: Planner range detected to be 2.735702
+Info:    RRTConnect: Starting planning with 1 states already in datastructure
+Info:    RRTConnect: Created 1696 states (849 start + 847 goal)
+Info:    ProblemDefinition: Adding approximate solution from planner RRTConnect
+[0m[INFO] [1793537935.288547343]: [OMPL RRT-Connect] success states=6 time=200.063[0m
+[0m[INFO] [1793537935.288800551]: [bridge ablation] rrt_connect=1 path_nodes=6[0m
+BRIDGE_RESULT,height=0.400000,mode=global_single,frontend_only=1,trial=8,seed=7008,start_y=1.500000,goal_y=1.500000,success=1,planned=1,within_budget=1,wall_ms=359.903708,init_ms=-1.000000,optimize_ms=-1.000000
+continous_failures_count: 0
+[0m[INFO] [1793537935.489063051]: [bridge ablation] mode=1 astar=1 initial_search=0[0m
+[0m[INFO] [1793537935.489145218]: [bridge ablation] fallback_start=1 fallback_goal=1[0m
+[0m[INFO] [1793537935.489166551]: [bridge ablation] free_start=1 free_goal=1[0m
+[0m[INFO] [1793537935.489282134]: [bridge ablation] direct_pair=0[0m
+[0m[INFO] [1793537935.490134009]: [bridge ablation] free_via=0 via_pair=0[0m
+Debug:   RRTConnect: Planner range detected to be 2.735702
+Info:    RRTConnect: Starting planning with 1 states already in datastructure
+Error:   Random number generation already started. Changing seed now will not lead to deterministic sampling.
+         at line 78 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/util/src/RandomNumbers.cpp
+Info:    RRTConnect: Created 1659 states (829 start + 830 goal)
+Info:    ProblemDefinition: Adding approximate solution from planner RRTConnect
+[0m[INFO] [1793537935.690484926]: [OMPL RRT-Connect] success states=5 time=200.077[0m
+[0m[INFO] [1793537935.690772468]: [bridge ablation] rrt_connect=1 path_nodes=5[0m
+BRIDGE_RESULT,height=0.400000,mode=global_single,frontend_only=1,trial=9,seed=7009,start_y=1.500000,goal_y=1.500000,success=1,planned=1,within_budget=1,wall_ms=365.499167,init_ms=-1.000000,optimize_ms=-1.000000
+continous_failures_count: 0
+[0m[INFO] [1793537935.888931010]: [bridge ablation] mode=1 astar=1 initial_search=0[0m
+[0m[INFO] [1793537935.889014343]: [bridge ablation] fallback_start=1 fallback_goal=1[0m
+[0m[INFO] [1793537935.889038760]: [bridge ablation] free_start=1 free_goal=1[0m
+[0m[INFO] [1793537935.889158010]: [bridge ablation] direct_pair=0[0m
+[0m[INFO] [1793537935.890035468]: [bridge ablation] free_via=0 via_pair=0[0m
+Debug:   RRTConnect: Planner range detected to be 2.735702
+Info:    RRTConnect: Starting planning with 1 states already in datastructure
+Error:   Random number generation already started. Changing seed now will not lead to deterministic sampling.
+         at line 78 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/util/src/RandomNumbers.cpp
+Info:    RRTConnect: Created 1697 states (826 start + 871 goal)
+Info:    ProblemDefinition: Adding approximate solution from planner RRTConnect
+[0m[INFO] [1793537936.090419135]: [OMPL RRT-Connect] success states=4 time=200.100[0m
+[0m[INFO] [1793537936.090608843]: [bridge ablation] rrt_connect=1 path_nodes=4[0m
+BRIDGE_RESULT,height=0.400000,mode=global_single,frontend_only=1,trial=10,seed=7010,start_y=1.500000,goal_y=1.500000,success=1,planned=1,within_budget=1,wall_ms=367.501500,init_ms=-1.000000,optimize_ms=-1.000000
+Error:   Random number generation already started. Changing seed now will not lead to deterministic sampling.
+         at line 78 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/util/src/RandomNumbers.cpp
+continous_failures_count: 0
+[0m[INFO] [1793537936.275624843]: [bridge ablation] mode=1 astar=1 initial_search=0[0m
+[0m[INFO] [1793537936.275707801]: [bridge ablation] fallback_start=1 fallback_goal=1[0m
+[0m[INFO] [1793537936.275729593]: [bridge ablation] free_start=1 free_goal=1[0m
+[0m[INFO] [1793537936.275849510]: [bridge ablation] direct_pair=0[0m
+[0m[INFO] [1793537936.276914468]: [bridge ablation] free_via=0 via_pair=0[0m
+Debug:   RRTConnect: Planner range detected to be 2.735702
+Info:    RRTConnect: Starting planning with 1 states already in datastructure
+Info:    RRTConnect: Created 1691 states (849 start + 842 goal)
+Info:    ProblemDefinition: Adding approximate solution from planner RRTConnect
+[0m[INFO] [1793537936.477235052]: [OMPL RRT-Connect] success states=5 time=200.039[0m
+[0m[INFO] [1793537936.477491427]: [bridge ablation] rrt_connect=1 path_nodes=5[0m
+BRIDGE_RESULT,height=0.400000,mode=global_single,frontend_only=1,trial=11,seed=7011,start_y=1.500000,goal_y=1.500000,success=1,planned=1,within_budget=1,wall_ms=357.306000,init_ms=-1.000000,optimize_ms=-1.000000
+continous_failures_count: 0
+[0m[INFO] [1793537936.662439343]: [bridge ablation] mode=1 astar=1 initial_search=0[0m
+[0m[INFO] [1793537936.662526260]: [bridge ablation] fallback_start=1 fallback_goal=1[0m
+[0m[INFO] [1793537936.662547260]: [bridge ablation] free_start=1 free_goal=1[0m
+[0m[INFO] [1793537936.662660510]: [bridge ablation] direct_pair=0[0m
+[0m[INFO] [1793537936.663528802]: [bridge ablation] free_via=0 via_pair=0[0m
+Debug:   RRTConnect: Planner range detected to be 2.735702
+Info:    RRTConnect: Starting planning with 1 states already in datastructure
+Error:   Random number generation already started. Changing seed now will not lead to deterministic sampling.
+         at line 78 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/util/src/RandomNumbers.cpp
+Info:    RRTConnect: Created 1698 states (838 start + 860 goal)
+Info:    ProblemDefinition: Adding approximate solution from planner RRTConnect
+[0m[INFO] [1793537936.863945802]: [OMPL RRT-Connect] success states=4 time=200.131[0m
+[0m[INFO] [1793537936.864225510]: [bridge ablation] rrt_connect=1 path_nodes=4[0m
+BRIDGE_RESULT,height=0.400000,mode=global_single,frontend_only=1,trial=12,seed=7012,start_y=1.500000,goal_y=1.500000,success=1,planned=1,within_budget=1,wall_ms=358.785042,init_ms=-1.000000,optimize_ms=-1.000000
+Error:   Random number generation already started. Changing seed now will not lead to deterministic sampling.
+         at line 78 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/util/src/RandomNumbers.cpp
+continous_failures_count: 0
+[0m[INFO] [1793537937.049004802]: [bridge ablation] mode=1 astar=1 initial_search=0[0m
+[0m[INFO] [1793537937.049084135]: [bridge ablation] fallback_start=1 fallback_goal=1[0m
+[0m[INFO] [1793537937.049104760]: [bridge ablation] free_start=1 free_goal=1[0m
+[0m[INFO] [1793537937.049219135]: [bridge ablation] direct_pair=0[0m
+[0m[INFO] [1793537937.050078093]: [bridge ablation] free_via=0 via_pair=0[0m
+Debug:   RRTConnect: Planner range detected to be 2.735702
+Info:    RRTConnect: Starting planning with 1 states already in datastructure
+Info:    RRTConnect: Created 1600 states (820 start + 780 goal)
+Info:    ProblemDefinition: Adding approximate solution from planner RRTConnect
+[0m[INFO] [1793537937.250410135]: [OMPL RRT-Connect] success states=3 time=200.060[0m
+[0m[INFO] [1793537937.250651135]: [bridge ablation] rrt_connect=1 path_nodes=3[0m
+BRIDGE_RESULT,height=0.400000,mode=global_single,frontend_only=1,trial=13,seed=7013,start_y=1.500000,goal_y=1.500000,success=1,planned=1,within_budget=1,wall_ms=357.340875,init_ms=-1.000000,optimize_ms=-1.000000
+Error:   Random number generation already started. Changing seed now will not lead to deterministic sampling.
+         at line 78 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/util/src/RandomNumbers.cpp
+continous_failures_count: 0
+[0m[INFO] [1793537937.435014260]: [bridge ablation] mode=1 astar=1 initial_search=0[0m
+[0m[INFO] [1793537937.435095927]: [bridge ablation] fallback_start=1 fallback_goal=1[0m
+[0m[INFO] [1793537937.435116552]: [bridge ablation] free_start=1 free_goal=1[0m
+[0m[INFO] [1793537937.435230094]: [bridge ablation] direct_pair=0[0m
+[0m[INFO] [1793537937.436094302]: [bridge ablation] free_via=0 via_pair=0[0m
+Debug:   RRTConnect: Planner range detected to be 2.735702
+Info:    RRTConnect: Starting planning with 1 states already in datastructure
+Info:    RRTConnect: Created 1681 states (856 start + 825 goal)
+Info:    ProblemDefinition: Adding approximate solution from planner RRTConnect
+[0m[INFO] [1793537937.636482094]: [OMPL RRT-Connect] success states=8 time=200.102[0m
+[0m[INFO] [1793537937.636732802]: [bridge ablation] rrt_connect=1 path_nodes=8[0m
+BRIDGE_RESULT,height=0.400000,mode=global_single,frontend_only=1,trial=14,seed=7014,start_y=1.500000,goal_y=1.500000,success=1,planned=1,within_budget=1,wall_ms=356.722250,init_ms=-1.000000,optimize_ms=-1.000000
+continous_failures_count: 0
+[0m[INFO] [1793537937.819610552]: [bridge ablation] mode=1 astar=1 initial_search=0[0m
+[0m[INFO] [1793537937.819690094]: [bridge ablation] fallback_start=1 fallback_goal=1[0m
+[0m[INFO] [1793537937.819711511]: [bridge ablation] free_start=1 free_goal=1[0m
+[0m[INFO] [1793537937.819825261]: [bridge ablation] direct_pair=0[0m
+[0m[INFO] [1793537937.820716386]: [bridge ablation] free_via=0 via_pair=0[0m
+Debug:   RRTConnect: Planner range detected to be 2.735702
+Info:    RRTConnect: Starting planning with 1 states already in datastructure
+Error:   Random number generation already started. Changing seed now will not lead to deterministic sampling.
+         at line 78 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/util/src/RandomNumbers.cpp
+Info:    RRTConnect: Created 1670 states (829 start + 841 goal)
+Info:    ProblemDefinition: Adding approximate solution from planner RRTConnect
+[0m[INFO] [1793537938.021029677]: [OMPL RRT-Connect] success states=3 time=200.045[0m
+[0m[INFO] [1793537938.021267011]: [bridge ablation] rrt_connect=1 path_nodes=3[0m
+BRIDGE_RESULT,height=0.400000,mode=global_single,frontend_only=1,trial=15,seed=7015,start_y=1.500000,goal_y=1.500000,success=1,planned=1,within_budget=1,wall_ms=356.809958,init_ms=-1.000000,optimize_ms=-1.000000
+Error:   Random number generation already started. Changing seed now will not lead to deterministic sampling.
+         at line 78 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/util/src/RandomNumbers.cpp
+continous_failures_count: 0
+[0m[INFO] [1793537938.203673886]: [bridge ablation] mode=1 astar=1 initial_search=0[0m
+[0m[INFO] [1793537938.203761761]: [bridge ablation] fallback_start=1 fallback_goal=1[0m
+[0m[INFO] [1793537938.203783094]: [bridge ablation] free_start=1 free_goal=1[0m
+[0m[INFO] [1793537938.203897469]: [bridge ablation] direct_pair=0[0m
+[0m[INFO] [1793537938.204757927]: [bridge ablation] free_via=0 via_pair=0[0m
+Debug:   RRTConnect: Planner range detected to be 2.735702
+Info:    RRTConnect: Starting planning with 1 states already in datastructure
+Info:    RRTConnect: Created 1660 states (834 start + 826 goal)
+Info:    ProblemDefinition: Adding approximate solution from planner RRTConnect
+[0m[INFO] [1793537938.405145594]: [OMPL RRT-Connect] success states=6 time=200.097[0m
+[0m[INFO] [1793537938.405383094]: [bridge ablation] rrt_connect=1 path_nodes=6[0m
+BRIDGE_RESULT,height=0.400000,mode=global_single,frontend_only=1,trial=16,seed=7016,start_y=1.500000,goal_y=1.500000,success=1,planned=1,within_budget=1,wall_ms=356.158500,init_ms=-1.000000,optimize_ms=-1.000000
+Error:   Random number generation already started. Changing seed now will not lead to deterministic sampling.
+         at line 78 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/util/src/RandomNumbers.cpp
+continous_failures_count: 0
+[0m[INFO] [1793537938.588636094]: [bridge ablation] mode=1 astar=1 initial_search=0[0m
+[0m[INFO] [1793537938.588724886]: [bridge ablation] fallback_start=1 fallback_goal=1[0m
+[0m[INFO] [1793537938.588750719]: [bridge ablation] free_start=1 free_goal=1[0m
+[0m[INFO] [1793537938.588880969]: [bridge ablation] direct_pair=0[0m
+[0m[INFO] [1793537938.589744303]: [bridge ablation] free_via=0 via_pair=0[0m
+Debug:   RRTConnect: Planner range detected to be 2.735702
+Info:    RRTConnect: Starting planning with 1 states already in datastructure
+Info:    RRTConnect: Created 1673 states (845 start + 828 goal)
+Info:    ProblemDefinition: Adding approximate solution from planner RRTConnect
+[0m[INFO] [1793537938.790148803]: [OMPL RRT-Connect] success states=7 time=200.120[0m
+[0m[INFO] [1793537938.790399344]: [bridge ablation] rrt_connect=1 path_nodes=7[0m
+BRIDGE_RESULT,height=0.400000,mode=global_single,frontend_only=1,trial=17,seed=7017,start_y=1.500000,goal_y=1.500000,success=1,planned=1,within_budget=1,wall_ms=356.437834,init_ms=-1.000000,optimize_ms=-1.000000
+Error:   Random number generation already started. Changing seed now will not lead to deterministic sampling.
+         at line 78 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/util/src/RandomNumbers.cpp
+continous_failures_count: 0
+[0m[INFO] [1793537938.973486219]: [bridge ablation] mode=1 astar=1 initial_search=0[0m
+[0m[INFO] [1793537938.973572053]: [bridge ablation] fallback_start=1 fallback_goal=1[0m
+[0m[INFO] [1793537938.973596094]: [bridge ablation] free_start=1 free_goal=1[0m
+[0m[INFO] [1793537938.973716386]: [bridge ablation] direct_pair=0[0m
+[0m[INFO] [1793537938.974590511]: [bridge ablation] free_via=0 via_pair=0[0m
+Debug:   RRTConnect: Planner range detected to be 2.735702
+Info:    RRTConnect: Starting planning with 1 states already in datastructure
+Info:    RRTConnect: Created 1685 states (865 start + 820 goal)
+Info:    ProblemDefinition: Adding approximate solution from planner RRTConnect
+[0m[INFO] [1793537939.174927511]: [OMPL RRT-Connect] success states=8 time=200.055[0m
+[0m[INFO] [1793537939.175112511]: [bridge ablation] rrt_connect=1 path_nodes=8[0m
+BRIDGE_RESULT,height=0.400000,mode=global_single,frontend_only=1,trial=18,seed=7018,start_y=1.500000,goal_y=1.500000,success=1,planned=1,within_budget=1,wall_ms=356.407375,init_ms=-1.000000,optimize_ms=-1.000000
+continous_failures_count: 0
+[0m[INFO] [1793537939.359382261]: [bridge ablation] mode=1 astar=1 initial_search=0[0m
+[0m[INFO] [1793537939.359459970]: [bridge ablation] fallback_start=1 fallback_goal=1[0m
+[0m[INFO] [1793537939.359480928]: [bridge ablation] free_start=1 free_goal=1[0m
+[0m[INFO] [1793537939.359591095]: [bridge ablation] direct_pair=0[0m
+[0m[INFO] [1793537939.360472511]: [bridge ablation] free_via=0 via_pair=0[0m
+Debug:   RRTConnect: Planner range detected to be 2.735702
+Info:    RRTConnect: Starting planning with 1 states already in datastructure
+Error:   Random number generation already started. Changing seed now will not lead to deterministic sampling.
+         at line 78 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/util/src/RandomNumbers.cpp
+Info:    RRTConnect: Created 1685 states (848 start + 837 goal)
+Info:    ProblemDefinition: Adding approximate solution from planner RRTConnect
+[0m[INFO] [1793537939.560825970]: [OMPL RRT-Connect] success states=9 time=200.075[0m
+[0m[INFO] [1793537939.561052928]: [bridge ablation] rrt_connect=1 path_nodes=9[0m
+BRIDGE_RESULT,height=0.400000,mode=global_single,frontend_only=1,trial=19,seed=7019,start_y=1.500000,goal_y=1.500000,success=1,planned=1,within_budget=1,wall_ms=357.310375,init_ms=-1.000000,optimize_ms=-1.000000
+continous_failures_count: 0
+[0m[INFO] [1793537939.746555303]: [bridge ablation] mode=1 astar=1 initial_search=0[0m
+[0m[INFO] [1793537939.746637720]: [bridge ablation] fallback_start=1 fallback_goal=1[0m
+[0m[INFO] [1793537939.746659011]: [bridge ablation] free_start=1 free_goal=1[0m
+[0m[INFO] [1793537939.746774053]: [bridge ablation] direct_pair=0[0m
+[0m[INFO] [1793537939.747646178]: [bridge ablation] free_via=0 via_pair=0[0m
+Debug:   RRTConnect: Planner range detected to be 2.735702
+Info:    RRTConnect: Starting planning with 1 states already in datastructure
+Error:   Random number generation already started. Changing seed now will not lead to deterministic sampling.
+         at line 78 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/util/src/RandomNumbers.cpp
+Info:    RRTConnect: Created 1632 states (802 start + 830 goal)
+Info:    ProblemDefinition: Adding approximate solution from planner RRTConnect
+[0m[INFO] [1793537939.947989470]: [OMPL RRT-Connect] success states=9 time=200.067[0m
+[0m[INFO] [1793537939.948276928]: [bridge ablation] rrt_connect=1 path_nodes=9[0m
+BRIDGE_RESULT,height=0.400000,mode=global_single,frontend_only=1,trial=20,seed=7020,start_y=1.500000,goal_y=1.500000,success=1,planned=1,within_budget=1,wall_ms=359.326834,init_ms=-1.000000,optimize_ms=-1.000000
+Error:   Random number generation already started. Changing seed now will not lead to deterministic sampling.
+         at line 78 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/util/src/RandomNumbers.cpp
+continous_failures_count: 0
+[0m[INFO] [1793537940.132703887]: [bridge ablation] mode=1 astar=1 initial_search=0[0m
+[0m[INFO] [1793537940.132792720]: [bridge ablation] fallback_start=1 fallback_goal=1[0m
+[0m[INFO] [1793537940.132837887]: [bridge ablation] free_start=1 free_goal=1[0m
+[0m[INFO] [1793537940.132970970]: [bridge ablation] direct_pair=0[0m
+[0m[INFO] [1793537940.133813428]: [bridge ablation] free_via=0 via_pair=0[0m
+Debug:   RRTConnect: Planner range detected to be 2.735702
+Info:    RRTConnect: Starting planning with 1 states already in datastructure
+Info:    RRTConnect: Created 1666 states (844 start + 822 goal)
+Info:    ProblemDefinition: Adding approximate solution from planner RRTConnect
+[0m[INFO] [1793537940.334145345]: [OMPL RRT-Connect] success states=3 time=200.055[0m
+[0m[INFO] [1793537940.334321928]: [bridge ablation] rrt_connect=1 path_nodes=3[0m
+BRIDGE_RESULT,height=0.400000,mode=global_single,frontend_only=1,trial=21,seed=7021,start_y=1.500000,goal_y=1.500000,success=1,planned=1,within_budget=1,wall_ms=357.162916,init_ms=-1.000000,optimize_ms=-1.000000
+continous_failures_count: 0
+[0m[INFO] [1793537940.522404637]: [bridge ablation] mode=1 astar=1 initial_search=0[0m
+[0m[INFO] [1793537940.522487678]: [bridge ablation] fallback_start=1 fallback_goal=1[0m
+[0m[INFO] [1793537940.522509470]: [bridge ablation] free_start=1 free_goal=1[0m
+[0m[INFO] [1793537940.522623387]: [bridge ablation] direct_pair=0[0m
+[0m[INFO] [1793537940.523495637]: [bridge ablation] free_via=0 via_pair=0[0m
+Debug:   RRTConnect: Planner range detected to be 2.735702
+Info:    RRTConnect: Starting planning with 1 states already in datastructure
+Error:   Random number generation already started. Changing seed now will not lead to deterministic sampling.
+         at line 78 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/util/src/RandomNumbers.cpp
+Info:    RRTConnect: Created 1640 states (804 start + 836 goal)
+Info:    ProblemDefinition: Adding approximate solution from planner RRTConnect
+[0m[INFO] [1793537940.723865679]: [OMPL RRT-Connect] success states=9 time=200.085[0m
+[0m[INFO] [1793537940.724096220]: [bridge ablation] rrt_connect=1 path_nodes=9[0m
+BRIDGE_RESULT,height=0.400000,mode=global_single,frontend_only=1,trial=22,seed=7022,start_y=1.500000,goal_y=1.500000,success=1,planned=1,within_budget=1,wall_ms=359.111417,init_ms=-1.000000,optimize_ms=-1.000000
+continous_failures_count: 0
+[0m[INFO] [1793537940.911992637]: [bridge ablation] mode=1 astar=1 initial_search=0[0m
+[0m[INFO] [1793537940.912081929]: [bridge ablation] fallback_start=1 fallback_goal=1[0m
+[0m[INFO] [1793537940.912103095]: [bridge ablation] free_start=1 free_goal=1[0m
+[0m[INFO] [1793537940.912214554]: [bridge ablation] direct_pair=0[0m
+[0m[INFO] [1793537940.913083220]: [bridge ablation] free_via=0 via_pair=0[0m
+Debug:   RRTConnect: Planner range detected to be 2.735702
+Info:    RRTConnect: Starting planning with 1 states already in datastructure
+Error:   Random number generation already started. Changing seed now will not lead to deterministic sampling.
+         at line 78 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/util/src/RandomNumbers.cpp
+Info:    RRTConnect: Created 1661 states (841 start + 820 goal)
+Info:    ProblemDefinition: Adding approximate solution from planner RRTConnect
+[0m[INFO] [1793537941.113513179]: [OMPL RRT-Connect] success states=2 time=200.152[0m
+[0m[INFO] [1793537941.113755845]: [bridge ablation] rrt_connect=1 path_nodes=2[0m
+BRIDGE_RESULT,height=0.400000,mode=global_single,frontend_only=1,trial=23,seed=7023,start_y=1.500000,goal_y=1.500000,success=1,planned=1,within_budget=1,wall_ms=357.281000,init_ms=-1.000000,optimize_ms=-1.000000
+Error:   Random number generation already started. Changing seed now will not lead to deterministic sampling.
+         at line 78 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/util/src/RandomNumbers.cpp
+continous_failures_count: 0
+[0m[INFO] [1793537941.298287971]: [bridge ablation] mode=1 astar=1 initial_search=0[0m
+[0m[INFO] [1793537941.298385471]: [bridge ablation] fallback_start=1 fallback_goal=1[0m
+[0m[INFO] [1793537941.298406262]: [bridge ablation] free_start=1 free_goal=1[0m
+[0m[INFO] [1793537941.298520721]: [bridge ablation] direct_pair=0[0m
+[0m[INFO] [1793537941.299658387]: [bridge ablation] free_via=0 via_pair=0[0m
+Debug:   RRTConnect: Planner range detected to be 2.735702
+Info:    RRTConnect: Starting planning with 1 states already in datastructure
+Info:    RRTConnect: Created 1687 states (854 start + 833 goal)
+Info:    ProblemDefinition: Adding approximate solution from planner RRTConnect
+[0m[INFO] [1793537941.499998512]: [OMPL RRT-Connect] success states=10 time=200.053[0m
+[0m[INFO] [1793537941.500204679]: [bridge ablation] rrt_connect=1 path_nodes=10[0m
+BRIDGE_RESULT,height=0.400000,mode=global_single,frontend_only=1,trial=24,seed=7024,start_y=1.500000,goal_y=1.500000,success=1,planned=1,within_budget=1,wall_ms=357.886083,init_ms=-1.000000,optimize_ms=-1.000000
+destory manager
+
+auto-starting new master
+[1mprocess[master]: started with pid [51281][0m
+[1mROS_MASTER_URI=http://localhost:11311[0m
+]2;/ws/src/lns_remani/remani_planner/plan_manage/launch/bridge_ablation.launch http://localhost:11311
+[1msetting /run_id to fbd5dd02-d5f3-11f1-a48f-5e358cbe3d51[0m
+[1mprocess[rosout-1]: started with pid [51291][0m
+started core service [/rosout]
+[1mprocess[map_generator-2]: started with pid [51294][0m
+[1mprocess[fake_mm-3]: started with pid [51295][0m
+[1mprocess[bridge_ablation_probe-4]: started with pid [51296][0m
+[bridge_ablation_probe-4] killing on exit
+[fake_mm-3] killing on exit
+[map_generator-2] killing on exit
+[rosout-1] killing on exit
+[master] killing on exit
+shutting down processing monitor...
+... shutting down processing monitor complete
+[1mdone[0m
+[31m================================================================================REQUIRED process [bridge_ablation_probe-4] has died!
+process has finished cleanly
+log file: /root/.ros/log/fbd5dd02-d5f3-11f1-a48f-5e358cbe3d51/bridge_ablation_probe-4*.log
+Initiating shutdown!
+================================================================================[0m

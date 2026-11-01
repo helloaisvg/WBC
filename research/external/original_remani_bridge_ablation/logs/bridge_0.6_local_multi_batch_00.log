@@ -1,0 +1,1026 @@
+... logging to /root/.ros/log/d5c5753c-d5f3-11f1-99f3-5e358cbe3d51/roslaunch-d7708c7360c8-50679.log
+Checking log directory for disk usage. This may take a while.
+Press Ctrl-C to interrupt
+Done checking log file disk usage. Usage is <1GB.
+]2;/ws/src/lns_remani/remani_planner/plan_manage/launch/bridge_ablation.launch
+[1mstarted roslaunch server http://d7708c7360c8:44693/[0m
+
+SUMMARY
+========
+
+PARAMETERS
+ * /bridge_ablation_probe/benchmark/bridge_height: 0.6
+ * /bridge_ablation_probe/benchmark/budget_ms: 600
+ * /bridge_ablation_probe/benchmark/fallback_mode: local_multi
+ * /bridge_ablation_probe/benchmark/frontend_only: True
+ * /bridge_ablation_probe/benchmark/seed_offset: 0
+ * /bridge_ablation_probe/benchmark/trials: 25
+ * /bridge_ablation_probe/fsm/emergency_time: 1.5
+ * /bridge_ablation_probe/fsm/global_plan: True
+ * /bridge_ablation_probe/fsm/init_gripper_close: False
+ * /bridge_ablation_probe/fsm/init_state: [-2.0, 1.5, 0.0, ...
+ * /bridge_ablation_probe/fsm/init_yaw: 0.0
+ * /bridge_ablation_probe/fsm/planning_horizon: 5.0
+ * /bridge_ablation_probe/fsm/replan_trajectory_time: 1.7
+ * /bridge_ablation_probe/fsm/target_type: 2
+ * /bridge_ablation_probe/fsm/thresh_replan_time: 2.5
+ * /bridge_ablation_probe/fsm/time_for_gripper: 0.05
+ * /bridge_ablation_probe/fsm/waypoint0: [2.0, 1.5, 0.0, -...
+ * /bridge_ablation_probe/fsm/waypoint0_gripper_close: True
+ * /bridge_ablation_probe/fsm/waypoint0_yaw: 0.0
+ * /bridge_ablation_probe/fsm/waypoint1: [-2.0, 1.5, 0.0, ...
+ * /bridge_ablation_probe/fsm/waypoint1_gripper_close: False
+ * /bridge_ablation_probe/fsm/waypoint1_yaw: 180.0
+ * /bridge_ablation_probe/fsm/waypoint_num: 2
+ * /bridge_ablation_probe/grid_map/esdf_slice_height: -0.1
+ * /bridge_ablation_probe/grid_map/frame_id: world
+ * /bridge_ablation_probe/grid_map/ground_height: -0.01
+ * /bridge_ablation_probe/grid_map/local_bound_inflate: 0.0
+ * /bridge_ablation_probe/grid_map/local_map_margin: 15.0
+ * /bridge_ablation_probe/grid_map/local_update_range_x: 17.0
+ * /bridge_ablation_probe/grid_map/local_update_range_y: 17.0
+ * /bridge_ablation_probe/grid_map/local_update_range_z: 3.0
+ * /bridge_ablation_probe/grid_map/map_size_x: 20.0
+ * /bridge_ablation_probe/grid_map/map_size_y: 8.0
+ * /bridge_ablation_probe/grid_map/map_size_z: 3.0
+ * /bridge_ablation_probe/grid_map/max_ray_length: 20.0
+ * /bridge_ablation_probe/grid_map/min_ray_length: 0.1
+ * /bridge_ablation_probe/grid_map/obstacles_inflation: 0.0
+ * /bridge_ablation_probe/grid_map/p_hit: 0.65
+ * /bridge_ablation_probe/grid_map/p_max: 0.9
+ * /bridge_ablation_probe/grid_map/p_min: 0.12
+ * /bridge_ablation_probe/grid_map/p_miss: 0.35
+ * /bridge_ablation_probe/grid_map/p_occ: 0.8
+ * /bridge_ablation_probe/grid_map/pose_type: 1
+ * /bridge_ablation_probe/grid_map/resolution: 0.05
+ * /bridge_ablation_probe/grid_map/use_global_map: True
+ * /bridge_ablation_probe/grid_map/use_load_map: True
+ * /bridge_ablation_probe/grid_map/virtual_ceil_height: 4.0
+ * /bridge_ablation_probe/grid_map/visualization_truncate_height: 2.8
+ * /bridge_ablation_probe/grid_map/z_length: 0.0
+ * /bridge_ablation_probe/manager/control_points_distance: 0.4
+ * /bridge_ablation_probe/manager/feasibility_tolerance: 0.05
+ * /bridge_ablation_probe/manager/polyTraj_piece_length: 2.0
+ * /bridge_ablation_probe/map/map_type: 1
+ * /bridge_ablation_probe/mm/base_mani_fixed_joint_xyz_ypr: [0.0, 0.0, 0.0, 0...
+ * /bridge_ablation_probe/mm/manipulator_config: [0.176, 0.417, 0....
+ * /bridge_ablation_probe/mm/manipulator_dof: 6
+ * /bridge_ablation_probe/mm/manipulator_max_acc: 3.14
+ * /bridge_ablation_probe/mm/manipulator_max_pos: [3.052, 0.001, 3....
+ * /bridge_ablation_probe/mm/manipulator_max_vel: 1.57
+ * /bridge_ablation_probe/mm/manipulator_min_pos: [-3.062, -3.136, ...
+ * /bridge_ablation_probe/mm/manipulator_thickness: 0.03
+ * /bridge_ablation_probe/mm/mobile_base_check_radius: 0.17
+ * /bridge_ablation_probe/mm/mobile_base_dof: 2
+ * /bridge_ablation_probe/mm/mobile_base_height: 0.23
+ * /bridge_ablation_probe/mm/mobile_base_length: 0.5
+ * /bridge_ablation_probe/mm/mobile_base_max_wheel_alpha: 20.0
+ * /bridge_ablation_probe/mm/mobile_base_max_wheel_omega: 10.0
+ * /bridge_ablation_probe/mm/mobile_base_non_singul_vel: 0.05
+ * /bridge_ablation_probe/mm/mobile_base_wheel_base: 0.37
+ * /bridge_ablation_probe/mm/mobile_base_wheel_radius: 0.07
+ * /bridge_ablation_probe/mm/mobile_base_width: 0.5
+ * /bridge_ablation_probe/mm/use_fast_armer: True
+ * /bridge_ablation_probe/optimization/constrain_points_perPiece: 16
+ * /bridge_ablation_probe/optimization/dense_sample_resolution: 16
+ * /bridge_ablation_probe/optimization/ground_safe_dis: 0.03
+ * /bridge_ablation_probe/optimization/ground_safe_margin: 0.03
+ * /bridge_ablation_probe/optimization/max_iterations: 250
+ * /bridge_ablation_probe/optimization/max_time: 0.2
+ * /bridge_ablation_probe/optimization/mobile_base_opt_gear: True
+ * /bridge_ablation_probe/optimization/safe_margin: 0.1
+ * /bridge_ablation_probe/optimization/safe_margin_mani: 0.1
+ * /bridge_ablation_probe/optimization/self_safe_margin: 0.1
+ * /bridge_ablation_probe/optimization/weight_base_feasibility: 100.0
+ * /bridge_ablation_probe/optimization/weight_manipulator_feasibility: 100.0
+ * /bridge_ablation_probe/optimization/weight_manipulator_self: 1000.0
+ * /bridge_ablation_probe/optimization/weight_obstacle: 50000.0
+ * /bridge_ablation_probe/optimization/weight_time: 1.0
+ * /bridge_ablation_probe/search/allocate_num: 100000
+ * /bridge_ablation_probe/search/check_num: 16
+ * /bridge_ablation_probe/search/curvatureDisCoe: 0.4
+ * /bridge_ablation_probe/search/dist_resolution: 0.6
+ * /bridge_ablation_probe/search/fallback_mode: local_multi
+ * /bridge_ablation_probe/search/goal_rate: 0.4
+ * /bridge_ablation_probe/search/lambda_heu: 1
+ * /bridge_ablation_probe/search/local_base_margin: 1.0
+ * /bridge_ablation_probe/search/local_planner: ompl_rrtconnect
+ * /bridge_ablation_probe/search/max_arc: 0.4
+ * /bridge_ablation_probe/search/max_loop_num: 5000
+ * /bridge_ablation_probe/search/max_mani_search_time: 0.05
+ * /bridge_ablation_probe/search/max_sample_time: 0.2
+ * /bridge_ablation_probe/search/max_seach_time: 0.5
+ * /bridge_ablation_probe/search/min_turning_radius: 0.2
+ * /bridge_ablation_probe/search/oneshot_check_len: 0.02
+ * /bridge_ablation_probe/search/oneshot_range: 1.0
+ * /bridge_ablation_probe/search/rrt_step_time: 0.15
+ * /bridge_ablation_probe/search/sample_time: 0.1
+ * /bridge_ablation_probe/search/traj_back_penalty: 3.0
+ * /bridge_ablation_probe/search/traj_forward_penalty: 1.0
+ * /bridge_ablation_probe/search/traj_gear_switch_penalty: 10.0
+ * /bridge_ablation_probe/search/traj_steer_change_penalty: 2.0
+ * /bridge_ablation_probe/search/traj_steer_penalty: 5.0
+ * /bridge_ablation_probe/search/try_astar_times: 10
+ * /bridge_ablation_probe/search/yaw_resolution: 3.15
+ * /fake_mm/fsm/init_gripper_close: False
+ * /fake_mm/fsm/init_state: [-2.0, 1.5, 0.0, ...
+ * /fake_mm/fsm/init_yaw: 0.0
+ * /fake_mm/fsm/waypoint0: [2.0, 1.5, 0.0, -...
+ * /fake_mm/fsm/waypoint0_gripper_close: True
+ * /fake_mm/fsm/waypoint0_yaw: 0.0
+ * /fake_mm/fsm/waypoint1: [-2.0, 1.5, 0.0, ...
+ * /fake_mm/fsm/waypoint1_gripper_close: False
+ * /fake_mm/fsm/waypoint1_yaw: 180.0
+ * /fake_mm/fsm/waypoint_num: 2
+ * /fake_mm/map/map_type: 1
+ * /fake_mm/mm/base_mani_fixed_joint_xyz_ypr: [0.0, 0.0, 0.0, 0...
+ * /fake_mm/mm/manipulator_config: [0.176, 0.417, 0....
+ * /fake_mm/mm/manipulator_dof: 6
+ * /fake_mm/mm/manipulator_max_acc: 3.14
+ * /fake_mm/mm/manipulator_max_pos: [3.052, 0.001, 3....
+ * /fake_mm/mm/manipulator_max_vel: 1.57
+ * /fake_mm/mm/manipulator_min_pos: [-3.062, -3.136, ...
+ * /fake_mm/mm/manipulator_thickness: 0.03
+ * /fake_mm/mm/mobile_base_check_radius: 0.17
+ * /fake_mm/mm/mobile_base_dof: 2
+ * /fake_mm/mm/mobile_base_height: 0.23
+ * /fake_mm/mm/mobile_base_length: 0.5
+ * /fake_mm/mm/mobile_base_max_wheel_alpha: 20.0
+ * /fake_mm/mm/mobile_base_max_wheel_omega: 10.0
+ * /fake_mm/mm/mobile_base_non_singul_vel: 0.05
+ * /fake_mm/mm/mobile_base_wheel_base: 0.37
+ * /fake_mm/mm/mobile_base_wheel_radius: 0.07
+ * /fake_mm/mm/mobile_base_width: 0.5
+ * /fake_mm/mm/use_fast_armer: True
+ * /map_generator/fsm/init_gripper_close: False
+ * /map_generator/fsm/init_state: [-2.0, 1.5, 0.0, ...
+ * /map_generator/fsm/init_yaw: 0.0
+ * /map_generator/fsm/waypoint0: [2.0, 1.5, 0.0, -...
+ * /map_generator/fsm/waypoint0_gripper_close: True
+ * /map_generator/fsm/waypoint0_yaw: 0.0
+ * /map_generator/fsm/waypoint1: [-2.0, 1.5, 0.0, ...
+ * /map_generator/fsm/waypoint1_gripper_close: False
+ * /map_generator/fsm/waypoint1_yaw: 180.0
+ * /map_generator/fsm/waypoint_num: 2
+ * /map_generator/map/bridge_height: 0.6
+ * /map_generator/map/map_type: 1
+ * /map_generator/map/resolution: 0.05
+ * /map_generator/map/seed: 30
+ * /map_generator/map/x_size: 8.0
+ * /map_generator/map/y_size: 8.0
+ * /map_generator/map/z_size: 3.0
+ * /map_generator/mm/base_mani_fixed_joint_xyz_ypr: [0.0, 0.0, 0.0, 0...
+ * /map_generator/mm/manipulator_config: [0.176, 0.417, 0....
+ * /map_generator/mm/manipulator_dof: 6
+ * /map_generator/mm/manipulator_max_acc: 3.14
+ * /map_generator/mm/manipulator_max_pos: [3.052, 0.001, 3....
+ * /map_generator/mm/manipulator_max_vel: 1.57
+ * /map_generator/mm/manipulator_min_pos: [-3.062, -3.136, ...
+ * /map_generator/mm/manipulator_thickness: 0.03
+ * /map_generator/mm/mobile_base_check_radius: 0.17
+ * /map_generator/mm/mobile_base_dof: 2
+ * /map_generator/mm/mobile_base_height: 0.23
+ * /map_generator/mm/mobile_base_length: 0.5
+ * /map_generator/mm/mobile_base_max_wheel_alpha: 20.0
+ * /map_generator/mm/mobile_base_max_wheel_omega: 10.0
+ * /map_generator/mm/mobile_base_non_singul_vel: 0.05
+ * /map_generator/mm/mobile_base_wheel_base: 0.37
+ * /map_generator/mm/mobile_base_wheel_radius: 0.07
+ * /map_generator/mm/mobile_base_width: 0.5
+ * /map_generator/mm/use_fast_armer: True
+ * /map_generator/pub_rate: 10.0
+ * /rosdistro: noetic
+ * /rosversion: 1.17.4
+
+NODES
+  /
+    bridge_ablation_probe (remani_planner/bridge_ablation_probe)
+    fake_mm (fake_mm/fake_mm)
+    map_generator (map_generator/map_generator)
+[33m[WARN] [1793537867.305882464]: Finished generate Bridge Map [0m
+BRIDGE_FREE,height=0.6,free=422,samples=4096
+continous_failures_count: 0
+[0m[INFO] [1793537868.088337256]: [bridge ablation] mode=3 astar=1 initial_search=1[0m
+BRIDGE_RESULT,height=0.600000,mode=local_multi,frontend_only=1,trial=0,seed=7000,start_y=1.500000,goal_y=1.500000,success=1,planned=1,within_budget=1,wall_ms=175.204084,init_ms=-1.000000,optimize_ms=-1.000000
+continous_failures_count: 0
+[0m[INFO] [1793537868.299165006]: [bridge ablation] mode=3 astar=1 initial_search=0[0m
+[0m[INFO] [1793537868.299369756]: [bridge ablation] fallback_start=50 fallback_goal=52[0m
+[0m[INFO] [1793537868.299875006]: [bridge ablation] free_start=50 free_goal=52[0m
+[0m[INFO] [1793537868.300203881]: [bridge ablation] direct_pair=0[0m
+[0m[INFO] [1793537868.308224173]: [bridge ablation] free_via=89 via_pair=0[0m
+Error:   Random number generation already started. Changing seed now will not lead to deterministic sampling.
+         at line 78 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/util/src/RandomNumbers.cpp
+Debug:   RRTConnect: Planner range detected to be 2.543600
+Warning: RRTConnect: Skipping invalid start state (invalid state)
+         at line 248 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/base/src/Planner.cpp
+Debug:   RRTConnect: Discarded start state RealVectorState [-0.515517 0.138503 -0.439076 -1.35288 0.604923 0.8656 -1.00191 2.84331]
+
+Warning: RRTConnect: Skipping invalid start state (invalid state)
+         at line 248 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/base/src/Planner.cpp
+Debug:   RRTConnect: Discarded start state RealVectorState [-0.515517 0.138503 -0.846739 -2.61635 2.35014 0.0193261 -0.989691 -1.00984]
+
+Warning: RRTConnect: Skipping invalid start state (invalid state)
+         at line 248 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/base/src/Planner.cpp
+Warning: Debug:   RRTConnect: Discarded start state RealVectorState [-0.515517 0.138503 -0.992166 -2.36351 1.22353 -2.12577 -2.87362 -1.57284]
+
+Debug:   RRTConnect: Discarded start state RealVectorState [-0.515517 0.138503 2.31265 -0.508137 3.03816 0.253011 -3.41018 -1.2627]
+
+RRTConnect: Skipping invalid start state (invalid state)
+         at line 248 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/base/src/Planner.cpp
+Warning: RRTConnect: Skipping invalid start state (invalid state)
+         at line 248 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/base/src/Planner.cpp
+Debug:   RRTConnect: Discarded start state RealVectorState [-0.515517 0.138503 2.64891 -0.764245 1.69479 1.66735 -1.54044 -0.583708]
+
+Info:    RRTConnect: Starting planning with 45 states already in datastructure
+Debug:   RRTConnect: Discarded goal state:
+RealVectorState [0.504808 0.272515 -2.10758 -2.53955 2.73374 -0.35068 -0.910585 2.63424]
+
+Warning: RRTConnect: Skipping invalid goal state (invalid state)
+         at line 311 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/base/src/Planner.cpp
+Debug:   RRTConnect: Discarded goal state:
+RealVectorState [0.504808 0.272515 -2.70997 -2.15612 0.902502 -0.875423 -1.89003 1.20465]
+
+Warning: RRTConnect: Skipping invalid goal state (invalid state)
+         at line 311 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/base/src/Planner.cpp
+Debug:   RRTConnect: Discarded goal state:
+RealVectorState [0.504808 0.272515 1.02784 -0.581098 1.58643 -1.19558 -2.77881 -2.1789]
+
+Warning: RRTConnect: Skipping invalid goal state (invalid state)
+         at line 311 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/base/src/Planner.cpp
+Debug:   RRTConnect: Discarded goal state:
+RealVectorState [0.504808 0.272515 0.6638 -0.547207 0.0437579 0.328038 -1.17518 2.50996]
+
+Warning: RRTConnect: Skipping invalid goal state (invalid state)
+         at line 311 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/base/src/Planner.cpp
+Warning: RRTConnect: Skipping invalid goal state (invalid state)
+         at line 311 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/base/src/Planner.cpp
+Debug:   RRTConnect: Discarded goal state:
+RealVectorState [0.504808 0.272515 0.815359 -0.232796 0.364596 0.328038 -1.41996 2.50996]
+
+Warning: RRTConnect: Skipping invalid goal state (invalid state)
+         at line 311 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/base/src/Planner.cpp
+Debug:   RRTConnect: Discarded goal state:
+RealVectorState [0.504808 0.272515 0.815359 -0.417434 1.103 -0.492298 0.0809765 2.03829]
+
+Info:    RRTConnect: Created 430 states (207 start + 223 goal)
+[0m[INFO] [1793537868.362032839]: [OMPL RRT-Connect] success states=14 time=45.362[0m
+[0m[INFO] [1793537868.363276673]: [bridge ablation] rrt_connect=1 path_nodes=14[0m
+BRIDGE_RESULT,height=0.600000,mode=local_multi,frontend_only=1,trial=1,seed=7001,start_y=1.500000,goal_y=1.500000,success=1,planned=1,within_budget=1,wall_ms=229.670875,init_ms=-1.000000,optimize_ms=-1.000000
+continous_failures_count: 0
+[0m[INFO] [1793537868.547481173]: [bridge ablation] mode=3 astar=1 initial_search=0[0m
+[0m[INFO] [1793537868.547561881]: [bridge ablation] fallback_start=44 fallback_goal=49[0m
+[0m[INFO] [1793537868.547917964]: [bridge ablation] free_start=44 free_goal=49[0m
+[0m[INFO] [1793537868.548043839]: [bridge ablation] direct_pair=0[0m
+[0m[INFO] [1793537868.557399881]: [bridge ablation] free_via=107 via_pair=0[0m
+Debug:   RRTConnect: Planner range detected to be 2.543600
+Error:   Random number generation already started. Changing seed now will not lead to deterministic sampling.
+         at line 78 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/util/src/RandomNumbers.cpp
+Warning: RRTConnect: Skipping invalid start state (invalid state)
+         at line 248 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/base/src/Planner.cpp
+Debug:   RRTConnect: Discarded start state RealVectorState [-0.515517 0.138503 -1.53058 -1.14656 0.85851 1.49986 -2.86674 0.283164]
+
+Warning: RRTConnect: Skipping invalid start state (invalid state)
+         at line 248 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/base/src/Planner.cpp
+Debug:   RRTConnect: Discarded start state RealVectorState [-0.515517 0.138503 -0.911596 -2.74532 2.15838 0.521567 -2.86389 0.987204]
+
+Warning: RRTConnect: Skipping invalid start state (invalid state)
+         at line 248 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/base/src/Planner.cpp
+Warning: RRTConnect: Skipping invalid start state (invalid state)
+         at line 248 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/base/src/Planner.cpp
+Warning: RRTConnect: Skipping invalid start state (invalid state)
+         at line 248 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/base/src/Planner.cpp
+Debug:   RRTConnect: Discarded start state RealVectorState [-0.515517 0.138503 1.94366 -0.186568 2.84974 0.469877 -0.714046 0.910379]
+
+Debug:   RRTConnect: Discarded start state RealVectorState [-0.515517 0.138503 0.0151542 -1.87648 0.33573 2.6387 -2.9092 1.42774]
+
+Debug:   RRTConnect: Discarded start state RealVectorState [-0.515517 0.138503 2.08135 -0.565936 0.879011 1.40227 -0.663541 2.69301]
+
+Info:    RRTConnect: Starting planning with 39 states already in datastructure
+Debug:   RRTConnect: Discarded goal state:
+RealVectorState [0.504808 0.272515 -1.90022 -1.97781 1.44144 0.0367602 -1.83291 -0.750448]
+
+Warning: RRTConnect: Skipping invalid goal state (invalid state)
+         at line 311 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/base/src/Planner.cpp
+Warning: RRTConnect: Skipping invalid goal state (invalid state)
+         at line 311 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/base/src/Planner.cpp
+Debug:   RRTConnect: Discarded goal state:
+RealVectorState [0.504808 0.272515 -2.3851 -2.30079 2.46652 1.14765 -1.78116 -1.11704]
+
+Warning: RRTConnect: Skipping invalid goal state (invalid state)
+         at line 311 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/base/src/Planner.cpp
+Debug:   RRTConnect: Discarded goal state:
+RealVectorState [0.504808 0.272515 -2.63444 -2.62494 1.41531 2.372 -2.27656 0.634079]
+
+Warning: RRTConnect: Skipping invalid goal state (invalid state)
+         at line 311 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/base/src/Planner.cpp
+Debug:   RRTConnect: Discarded goal state:
+RealVectorState [0.504808 0.272515 -2.77061 -1.4595 0.674907 1.51817 -1.91173 1.62015]
+
+Info:    RRTConnect: Created 119 states (74 start + 45 goal)
+[0m[INFO] [1793537868.566595548]: [OMPL RRT-Connect] success states=4 time=8.869[0m
+[0m[INFO] [1793537868.566745548]: [bridge ablation] rrt_connect=1 path_nodes=4[0m
+BRIDGE_RESULT,height=0.600000,mode=local_multi,frontend_only=1,trial=2,seed=7002,start_y=1.500000,goal_y=1.500000,success=1,planned=1,within_budget=1,wall_ms=174.889166,init_ms=-1.000000,optimize_ms=-1.000000
+continous_failures_count: 0
+[0m[INFO] [1793537868.748923423]: [bridge ablation] mode=3 astar=1 initial_search=1[0m
+BRIDGE_RESULT,height=0.600000,mode=local_multi,frontend_only=1,trial=3,seed=7003,start_y=1.500000,goal_y=1.500000,success=1,planned=1,within_budget=1,wall_ms=158.114000,init_ms=-1.000000,optimize_ms=-1.000000
+continous_failures_count: 0
+[0m[INFO] [1793537868.945246090]: [bridge ablation] mode=3 astar=1 initial_search=0[0m
+[0m[INFO] [1793537868.945325965]: [bridge ablation] fallback_start=41 fallback_goal=40[0m
+[0m[INFO] [1793537868.945656590]: [bridge ablation] free_start=41 free_goal=40[0m
+[0m[INFO] [1793537868.945710048]: [bridge ablation] direct_pair=0[0m
+[0m[INFO] [1793537868.950396256]: [bridge ablation] free_via=102 via_pair=0[0m
+Debug:   RRTConnect: Planner range detected to be 2.543600
+Debug:   RRTConnect: Discarded start state RealVectorState [-0.515517 0.138503 -0.377608 -2.20147 2.44963 -0.486587 -3.54255 1.30154]
+
+Debug:   RRTConnect: Discarded start state RealVectorState [-0.515517 0.138503 -0.631865 -1.96873 1.14898 -0.770884 -2.58979 0.770884]
+
+Debug:   RRTConnect: Discarded start state RealVectorState [-0.515517 0.138503 -0.710279 -2.11692 0.624527 -1.88972 -2.78295 -1.7663]
+
+Debug:   RRTConnect: Discarded start state RealVectorState [-0.515517 0.138503 -0.795989 -2.68635 1.78988 2.86844 -1.41237 0.779718]
+
+Debug:   RRTConnect: Discarded start state RealVectorState [-0.515517 0.138503 -0.842487 -2.7788 2.80121 0.0490328 -2.75917 2.1832]
+
+Info:    RRTConnect: Starting planning with 36 states already in datastructure
+Error:   Random number generation already started. Changing seed now will not lead to deterministic sampling.
+         at line 78 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/util/src/RandomNumbers.cpp
+Warning: RRTConnect: Skipping invalid start state (invalid state)
+         at line 248 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/base/src/Planner.cpp
+Warning: RRTConnect: Skipping invalid start state (invalid state)
+         at line 248 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/base/src/Planner.cpp
+Warning: RRTConnect: Skipping invalid start state (invalid state)
+         at line 248 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/base/src/Planner.cpp
+Warning: RRTConnect: Skipping invalid start state (invalid state)
+         at line 248 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/base/src/Planner.cpp
+Warning: RRTConnect: Skipping invalid start state (invalid state)
+         at line 248 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/base/src/Planner.cpp
+Debug:   RRTConnect: Discarded goal state:
+RealVectorState [0.0158494 -0.0135307 -0.785261 -2.69735 2.05241 0.997765 -0.286074 2.2183]
+
+Warning: RRTConnect: Skipping invalid goal state (invalid state)
+         at line 311 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/base/src/Planner.cpp
+Debug:   RRTConnect: Discarded goal state:
+RealVectorState [0.504808 0.272515 -1.88363 -2.82086 2.53696 -0.707783 -1.19288 -2.59954]
+
+Warning: RRTConnect: Skipping invalid goal state (invalid state)
+         at line 311 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/base/src/Planner.cpp
+Debug:   RRTConnect: Discarded goal state:
+RealVectorState [0.504808 0.272515 1.09368 -0.349575 2.57247 -0.256961 0.00139844 -2.05569]
+
+Warning: RRTConnect: Skipping invalid goal state (invalid state)
+         at line 311 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/base/src/Planner.cpp
+Warning: RRTConnect: Skipping invalid goal state (invalid state)
+         at line 311 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/base/src/Planner.cpp
+Debug:   RRTConnect: Discarded goal state:
+RealVectorState [0.504808 0.272515 0.714488 -0.758289 2.06986 -2.18151 0.0256517 -1.93361]
+
+Debug:   RRTConnect: Discarded goal state:
+RealVectorState [0.504808 0.272515 0.844093 -0.0417621 2.03375 -1.44334 -0.315283 0.134556]
+
+Warning: RRTConnect: Skipping invalid goal state (invalid state)
+         at line 311 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/base/src/Planner.cpp
+Info:    RRTConnect: Created 218 states (105 start + 113 goal)
+[0m[INFO] [1793537868.972074465]: [OMPL RRT-Connect] success states=3 time=21.340[0m
+[0m[INFO] [1793537868.972179881]: [bridge ablation] rrt_connect=1 path_nodes=3[0m
+BRIDGE_RESULT,height=0.600000,mode=local_multi,frontend_only=1,trial=4,seed=7004,start_y=1.500000,goal_y=1.500000,success=1,planned=1,within_budget=1,wall_ms=191.049417,init_ms=-1.000000,optimize_ms=-1.000000
+continous_failures_count: 0
+[0m[INFO] [1793537869.162380256]: [bridge ablation] mode=3 astar=1 initial_search=1[0m
+BRIDGE_RESULT,height=0.600000,mode=local_multi,frontend_only=1,trial=5,seed=7005,start_y=1.500000,goal_y=1.500000,success=1,planned=1,within_budget=1,wall_ms=169.812958,init_ms=-1.000000,optimize_ms=-1.000000
+continous_failures_count: 0
+[0m[INFO] [1793537869.353714548]: [bridge ablation] mode=3 astar=1 initial_search=1[0m
+BRIDGE_RESULT,height=0.600000,mode=local_multi,frontend_only=1,trial=6,seed=7006,start_y=1.500000,goal_y=1.500000,success=1,planned=1,within_budget=1,wall_ms=154.389875,init_ms=-1.000000,optimize_ms=-1.000000
+continous_failures_count: 0
+[0m[INFO] [1793537869.540095298]: [bridge ablation] mode=3 astar=1 initial_search=1[0m
+BRIDGE_RESULT,height=0.600000,mode=local_multi,frontend_only=1,trial=7,seed=7007,start_y=1.500000,goal_y=1.500000,success=1,planned=1,within_budget=1,wall_ms=160.982917,init_ms=-1.000000,optimize_ms=-1.000000
+continous_failures_count: 0
+[0m[INFO] [1793537869.725514798]: [bridge ablation] mode=3 astar=1 initial_search=1[0m
+BRIDGE_RESULT,height=0.600000,mode=local_multi,frontend_only=1,trial=8,seed=7008,start_y=1.500000,goal_y=1.500000,success=1,planned=1,within_budget=1,wall_ms=154.678583,init_ms=-1.000000,optimize_ms=-1.000000
+continous_failures_count: 0
+[0m[INFO] [1793537869.906329548]: [bridge ablation] mode=3 astar=1 initial_search=0[0m
+[0m[INFO] [1793537869.906405257]: [bridge ablation] fallback_start=43 fallback_goal=45[0m
+[0m[INFO] [1793537869.906750673]: [bridge ablation] free_start=43 free_goal=45[0m
+[0m[INFO] [1793537869.906849007]: [bridge ablation] direct_pair=0[0m
+[0m[INFO] [1793537869.915880257]: [bridge ablation] free_via=104 via_pair=0[0m
+Debug:   RRTConnect: Planner range detected to be 2.543600
+Debug:   RRTConnect: Discarded start state RealVectorState [-0.515517 0.138503 -1.07788 -2.39758 1.27653 -0.702311 -0.23514 -1.90507]
+
+Error:   Random number generation already started. Changing seed now will not lead to deterministic sampling.
+         at line 78 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/util/src/RandomNumbers.cpp
+Warning: RRTConnect: Skipping invalid start state (invalid state)
+         at line 248 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/base/src/Planner.cpp
+Warning: RRTConnect: Skipping invalid start state (invalid state)
+         at line 248 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/base/src/Planner.cpp
+Debug:   RRTConnect: Discarded start state RealVectorState [-0.515517 0.138503 -0.687333 -2.72712 2.39687 -0.423069 -2.99065 -1.15633]
+
+Warning: RRTConnect: Skipping invalid start state (invalid state)
+         at line 248 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/base/src/Planner.cpp
+Debug:   RRTConnect: Discarded start state RealVectorState [-0.515517 0.138503 2.45384 -0.534822 1.06259 -2.39733 -1.15628 2.46109]
+
+Info:    RRTConnect: Starting planning with 40 states already in datastructure
+Debug:   RRTConnect: Discarded goal state:
+RealVectorState [0.0158494 -0.0135307 2.49766 -0.510645 2.31567 0.8241 -0.612775 -0.520277]
+
+Warning: RRTConnect: Skipping invalid goal state (invalid state)
+         at line 311 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/base/src/Planner.cpp
+Debug:   RRTConnect: Discarded goal state:
+RealVectorState [0.504808 0.272515 -2.25879 -0.912992 0.831541 0.117608 -2.14794 -1.31439]
+
+Warning: RRTConnect: Skipping invalid goal state (invalid state)
+         at line 311 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/base/src/Planner.cpp
+Warning: RRTConnect: Skipping invalid goal state (invalid state)
+         at line 311 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/base/src/Planner.cpp
+Debug:   RRTConnect: Discarded goal state:
+RealVectorState [0.504808 0.272515 -2.57858 -1.2268 0.898613 -1.42608 -0.929581 1.4685]
+
+Debug:   RRTConnect: Discarded goal state:
+RealVectorState [0.504808 0.272515 1.15633 -0.414471 2.19703 -1.15633 -1.84445 -1.15633]
+
+Warning: RRTConnect: Skipping invalid goal state (invalid state)
+         at line 311 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/base/src/Planner.cpp
+Info:    RRTConnect: Created 272 states (135 start + 137 goal)
+[0m[INFO] [1793537869.940779673]: [OMPL RRT-Connect] success states=4 time=24.603[0m
+[0m[INFO] [1793537869.940863257]: [bridge ablation] rrt_connect=1 path_nodes=4[0m
+BRIDGE_RESULT,height=0.600000,mode=local_multi,frontend_only=1,trial=9,seed=7009,start_y=1.500000,goal_y=1.500000,success=1,planned=1,within_budget=1,wall_ms=187.403708,init_ms=-1.000000,optimize_ms=-1.000000
+continous_failures_count: 0
+[0m[INFO] [1793537870.123331840]: [bridge ablation] mode=3 astar=1 initial_search=1[0m
+BRIDGE_RESULT,height=0.600000,mode=local_multi,frontend_only=1,trial=10,seed=7010,start_y=1.500000,goal_y=1.500000,success=1,planned=1,within_budget=1,wall_ms=157.412001,init_ms=-1.000000,optimize_ms=-1.000000
+continous_failures_count: 0
+[0m[INFO] [1793537870.311177215]: [bridge ablation] mode=3 astar=1 initial_search=0[0m
+[0m[INFO] [1793537870.311260632]: [bridge ablation] fallback_start=35 fallback_goal=40[0m
+[0m[INFO] [1793537870.311545674]: [bridge ablation] free_start=35 free_goal=40[0m
+[0m[INFO] [1793537870.311632590]: [bridge ablation] direct_pair=0[0m
+[0m[INFO] [1793537870.320103424]: [bridge ablation] free_via=95 via_pair=0[0m
+Debug:   RRTConnect: Planner range detected to be 2.543600
+Error:   Random number generation already started. Changing seed now will not lead to deterministic sampling.
+         at line 78 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/util/src/RandomNumbers.cpp
+Warning: RRTConnect: Skipping invalid start state (invalid state)
+         at line 248 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/base/src/Planner.cpp
+Warning: RRTConnect: Skipping invalid start state (invalid state)
+         at line 248 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/base/src/Planner.cpp
+Warning: RRTConnect: Skipping invalid start state (invalid state)
+         at line 248 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/base/src/Planner.cpp
+Debug:   RRTConnect: Discarded start state RealVectorState [-0.515517 0.138503 -0.353443 -1.76804 0.552677 1.82466 -1.07954 -0.611866]
+
+Debug:   RRTConnect: Discarded start state RealVectorState [-0.515517 0.138503 -0.449229 -2.71878 1.78421 2.20997 -0.550289 1.22792]
+
+Debug:   RRTConnect: Discarded start state RealVectorState [-0.515517 0.138503 0 -1.7955 0.507334 0.439486 -0.839199 0.08056]
+
+Debug:   RRTConnect: Discarded start state RealVectorState [-0.515517 0.138503 2.28366 -0.430135 0.334767 1.71416 -1.59649 -0.0508712]
+
+Debug:   RRTConnect: Discarded start state RealVectorState [-0.515517 0.138503 2.41571 -0.403546 0.257927 -1.09503 -2.25721 -2.73416]
+
+Warning: RRTConnect: Skipping invalid start state (invalid state)
+         at line 248 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/base/src/Planner.cpp
+Warning: RRTConnect: Skipping invalid start state (invalid state)
+         at line 248 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/base/src/Planner.cpp
+Info:    RRTConnect: Starting planning with 30 states already in datastructure
+Debug:   RRTConnect: Discarded goal state:
+RealVectorState [0.0158494 -0.0135307 2.23912 -0.0501158 1.53661 2.47518 0.226732 -2.60591]
+
+Warning: RRTConnect: Skipping invalid goal state (invalid state)
+         at line 311 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/base/src/Planner.cpp
+Debug:   RRTConnect: Discarded goal state:
+RealVectorState [0.504808 0.272515 -1.79984 -1.31113 1.00644 2.51116 -0.43763 -2.49587]
+
+Warning: RRTConnect: Skipping invalid goal state (invalid state)
+         at line 311 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/base/src/Planner.cpp
+Info:    RRTConnect: Created 262 states (122 start + 140 goal)
+[0m[INFO] [1793537870.345264049]: [OMPL RRT-Connect] success states=7 time=24.886[0m
+[0m[INFO] [1793537870.345443549]: [bridge ablation] rrt_connect=1 path_nodes=7[0m
+BRIDGE_RESULT,height=0.600000,mode=local_multi,frontend_only=1,trial=11,seed=7011,start_y=1.500000,goal_y=1.500000,success=1,planned=1,within_budget=1,wall_ms=192.086625,init_ms=-1.000000,optimize_ms=-1.000000
+continous_failures_count: 0
+[0m[INFO] [1793537870.530885882]: [bridge ablation] mode=3 astar=1 initial_search=0[0m
+[0m[INFO] [1793537870.530962132]: [bridge ablation] fallback_start=30 fallback_goal=49[0m
+[0m[INFO] [1793537870.531292757]: [bridge ablation] free_start=30 free_goal=49[0m
+[0m[INFO] [1793537870.531395424]: [bridge ablation] direct_pair=0[0m
+[0m[INFO] [1793537870.540271632]: [bridge ablation] free_via=123 via_pair=0[0m
+Debug:   RRTConnect: Planner range detected to be 2.543600
+Debug:   RRTConnect: Discarded start state RealVectorState [-0.515517 0.138503 -0.560869 -0.630225 0.827118 0.309462 -2.51367 0.335724]
+
+Error:   Random number generation already started. Changing seed now will not lead to deterministic sampling.
+         at line 78 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/util/src/RandomNumbers.cpp
+Warning: RRTConnect: Skipping invalid start state (invalid state)
+         at line 248 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/base/src/Planner.cpp
+Warning: RRTConnect: Skipping invalid start state (invalid state)
+         at line 248 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/base/src/Planner.cpp
+Debug:   RRTConnect: Discarded start state RealVectorState [-0.515517 0.138503 -0.724939 -1.62117 0.973726 -2.11119 -3.63637 0.796245]
+
+Debug:   RRTConnect: Discarded start state RealVectorState [-0.515517 0.138503 -0.818795 -2.41841 1.9944 0.282126 -0.174688 -2.27938]
+
+Debug:   RRTConnect: Discarded start state RealVectorState [-0.515517 0.138503 -0.934372 -1.78637 1.21866 0.332942 -1.99847 1.93968]
+
+Debug:   RRTConnect: Discarded start state RealVectorState [-0.515517 0.138503 1.9847 -0.375722 3.03515 2.22098 -2.29608 0.81326]
+
+Warning: RRTConnect: Skipping invalid start state (invalid state)
+         at line 248 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/base/src/Planner.cpp
+Warning: RRTConnect: Skipping invalid start state (invalid state)
+         at line 248 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/base/src/Planner.cpp
+Warning: RRTConnect: Skipping invalid start state (invalid state)
+         at line 248 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/base/src/Planner.cpp
+Warning: RRTConnect: Skipping invalid start state (invalid state)
+         at line 248 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/base/src/Planner.cpp
+Debug:   RRTConnect: Discarded start state RealVectorState [-0.515517 0.138503 2.81215 -0.266121 0.339267 1.69377 -2.50757 -1.66995]
+
+Info:    RRTConnect: Starting planning with 24 states already in datastructure
+Debug:   RRTConnect: Discarded goal state:
+RealVectorState [0.0158494 -0.0135307 -1.24469 -2.85963 2.33223 -2.52546 -3.21119 1.06308]
+
+Debug:   RRTConnect: Discarded goal state:
+RealVectorState [0.0158494 -0.0135307 1.98707 -0.0104398 2.7141 -1.41233 -0.949333 0.137932]
+
+Warning: RRTConnect: Skipping invalid goal state (invalid state)
+         at line 311 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/base/src/Planner.cpp
+Warning: RRTConnect: Skipping invalid goal state (invalid state)
+         at line 311 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/base/src/Planner.cpp
+Warning: RRTConnect: Skipping invalid goal state (invalid state)
+         at line 311 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/base/src/Planner.cpp
+Debug:   RRTConnect: Discarded goal state:
+RealVectorState [0.504808 0.272515 -2.91688 -1.16429 0.837227 0.214176 -2.62586 -1.8181]
+
+Warning: RRTConnect: Skipping invalid goal state (invalid state)
+         at line 311 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/base/src/Planner.cpp
+Debug:   RRTConnect: Discarded goal state:
+RealVectorState [0.504808 0.272515 1.00513 -0.364868 2.30923 -0.256005 -1.40689 -1.01839]
+
+Warning: RRTConnect: Skipping invalid goal state (invalid state)
+         at line 311 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/base/src/Planner.cpp
+Debug:   RRTConnect: Discarded goal state:
+RealVectorState [0.504808 0.272515 0.926718 -0.0419723 1.11001 0.887983 -2.26338 -0.353149]
+
+Info:    RRTConnect: Created 562 states (285 start + 277 goal)
+[0m[INFO] [1793537870.601401215]: [OMPL RRT-Connect] success states=6 time=60.846[0m
+[0m[INFO] [1793537870.601518507]: [bridge ablation] rrt_connect=1 path_nodes=6[0m
+BRIDGE_RESULT,height=0.600000,mode=local_multi,frontend_only=1,trial=12,seed=7012,start_y=1.500000,goal_y=1.500000,success=1,planned=1,within_budget=1,wall_ms=227.183500,init_ms=-1.000000,optimize_ms=-1.000000
+continous_failures_count: 0
+[0m[INFO] [1793537870.784309465]: [bridge ablation] mode=3 astar=1 initial_search=0[0m
+[0m[INFO] [1793537870.784543257]: [bridge ablation] fallback_start=47 fallback_goal=100[0m
+[0m[INFO] [1793537870.785104299]: [bridge ablation] free_start=47 free_goal=100[0m
+[0m[INFO] [1793537870.785204132]: [bridge ablation] direct_pair=0[0m
+[0m[INFO] [1793537870.793599924]: [bridge ablation] free_via=108 via_pair=0[0m
+Debug:   RRTConnect: Planner range detected to be 2.580042
+Debug:   RRTConnect: Discarded start state RealVectorState [-0.515517 0.138503 -1.14862 -2.43537 2.2396 -1.72061 0.00452393 2.14643]
+
+Error:   Random number generation already started. Changing seed now will not lead to deterministic sampling.
+         at line 78 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/util/src/RandomNumbers.cpp
+Warning: RRTConnect: Skipping invalid start state (invalid state)
+         at line 248 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/base/src/Planner.cpp
+Warning: RRTConnect: Skipping invalid start state (invalid state)
+         at line 248 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/base/src/Planner.cpp
+Warning: RRTConnect: Skipping invalid start state (invalid state)
+         at line 248 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/base/src/Planner.cpp
+Warning: RRTConnect: Skipping invalid start state (invalid state)
+         at line 248 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/base/src/Planner.cpp
+Warning: RRTConnect: Skipping invalid start state (invalid state)
+         at line 248 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/base/src/Planner.cpp
+Debug:   RRTConnect: Discarded start state RealVectorState [-0.515517 0.138503 -0.318901 -1.70396 0.646429 -0.378296 -3.41015 -2.33905]
+
+Debug:   RRTConnect: Discarded start state RealVectorState [-0.515517 0.138503 -0.356764 -2.58768 1.44645 1.01112 -1.61223 -0.738171]
+
+Debug:   RRTConnect: Discarded start state RealVectorState [-0.515517 0.138503 -0.62374 -2.70419 2.32964 -0.764878 -2.0008 -1.54271]
+
+Debug:   RRTConnect: Discarded start state RealVectorState [-0.515517 0.138503 -0.727583 -2.18268 1.62378 -2.01021 -0.43924 0.527862]
+
+Debug:   RRTConnect: Discarded start state RealVectorState [-0.515517 0.138503 -0.865864 -2.22789 1.07653 -0.350687 -3.32383 -0.4412]
+
+Warning: RRTConnect: Skipping invalid start state (invalid state)
+         at line 248 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/base/src/Planner.cpp
+Warning: RRTConnect: Skipping invalid start state (invalid state)
+         at line 248 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/base/src/Planner.cpp
+Debug:   RRTConnect: Discarded start state RealVectorState [-0.515517 0.138503 0.124456 -2.16784 2.23504 -1.39667 -3.09554 2.14643]
+
+Warning: RRTConnect: Skipping invalid start state (invalid state)
+         at line 248 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/base/src/Planner.cpp
+Debug:   RRTConnect: Discarded start state RealVectorState [0.504808 0.272515 2.32108 -2.84453 1.72575 -1.76283 -2.94684 -0.516738]
+
+Info:    RRTConnect: Starting planning with 39 states already in datastructure
+Warning: RRTConnect: Skipping invalid goal state (invalid state)
+         at line 311 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/base/src/Planner.cpp
+Debug:   RRTConnect: Discarded goal state:
+RealVectorState [0.504808 0.272515 -2.2007 -2.3635 0.924387 -0.626288 -1.5246 -2.32783]
+
+Warning: RRTConnect: Skipping invalid goal state (invalid state)
+         at line 311 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/base/src/Planner.cpp
+Debug:   RRTConnect: Discarded goal state:
+RealVectorState [0.504808 0.272515 -2.35372 -2.77867 1.91349 0.823458 -2.61397 -2.32783]
+
+Debug:   RRTConnect: Discarded goal state:
+RealVectorState [0.504808 0.272515 -2.64656 -2.73941 1.9579 -1.60717 -0.569431 2.45717]
+
+Warning: RRTConnect: Skipping invalid goal state (invalid state)
+         at line 311 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/base/src/Planner.cpp
+Warning: RRTConnect: Skipping invalid goal state (invalid state)
+         at line 311 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/base/src/Planner.cpp
+Debug:   RRTConnect: Discarded goal state:
+RealVectorState [0.504808 0.272515 0.985942 -0.560351 0.860044 -0.339781 -2.82549 0.947186]
+
+Debug:   RRTConnect: Discarded goal state:
+RealVectorState [0.962725 0.616698 0.267217 -0.317446 2.83026 0.659232 -1.6774 -2.11598]
+
+Warning: RRTConnect: Skipping invalid goal state (invalid state)
+         at line 311 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/base/src/Planner.cpp
+Info:    RRTConnect: Created 870 states (353 start + 517 goal)
+[0m[INFO] [1793537870.884153632]: [OMPL RRT-Connect] success states=4 time=90.224[0m
+[0m[INFO] [1793537870.884331882]: [bridge ablation] rrt_connect=1 path_nodes=4[0m
+BRIDGE_RESULT,height=0.600000,mode=local_multi,frontend_only=1,trial=13,seed=7013,start_y=1.500000,goal_y=1.500000,success=1,planned=1,within_budget=1,wall_ms=254.714167,init_ms=-1.000000,optimize_ms=-1.000000
+continous_failures_count: 0
+[0m[INFO] [1793537871.068683049]: [bridge ablation] mode=3 astar=1 initial_search=1[0m
+BRIDGE_RESULT,height=0.600000,mode=local_multi,frontend_only=1,trial=14,seed=7014,start_y=1.500000,goal_y=1.500000,success=1,planned=1,within_budget=1,wall_ms=155.445833,init_ms=-1.000000,optimize_ms=-1.000000
+continous_failures_count: 0
+[0m[INFO] [1793537871.251493257]: [bridge ablation] mode=3 astar=1 initial_search=1[0m
+BRIDGE_RESULT,height=0.600000,mode=local_multi,frontend_only=1,trial=15,seed=7015,start_y=1.500000,goal_y=1.500000,success=1,planned=1,within_budget=1,wall_ms=154.640708,init_ms=-1.000000,optimize_ms=-1.000000
+continous_failures_count: 0
+[0m[INFO] [1793537871.434040424]: [bridge ablation] mode=3 astar=1 initial_search=0[0m
+[0m[INFO] [1793537871.434123924]: [bridge ablation] fallback_start=40 fallback_goal=109[0m
+[0m[INFO] [1793537871.434671341]: [bridge ablation] free_start=40 free_goal=109[0m
+[0m[INFO] [1793537871.434778216]: [bridge ablation] direct_pair=0[0m
+[0m[INFO] [1793537871.443571007]: [bridge ablation] free_via=106 via_pair=0[0m
+Debug:   RRTConnect: Planner range detected to be 2.580042
+Debug:   RRTConnect: Discarded start state RealVectorState [-0.515517 0.138503 -1.10976 -1.5543 0.982383 2.00562 -1.92688 2.07032]
+
+Debug:   RRTConnect: Discarded start state RealVectorState [-0.515517 0.138503 -1.49039 -2.11771 1.20427 2.03918 -2.99788 -1.36562]
+
+Error:   Random number generation already started. Changing seed now will not lead to deterministic sampling.
+         at line 78 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/util/src/RandomNumbers.cpp
+Warning: RRTConnect: Skipping invalid start state (invalid state)
+         at line 248 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/base/src/Planner.cpp
+Warning: RRTConnect: Skipping invalid start state (invalid state)
+         at line 248 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/base/src/Planner.cpp
+Debug:   RRTConnect: Discarded start state RealVectorState [-0.515517 0.138503 -0.542526 -2.64528 1.22532 1.24068 -3.56633 -2.25854]
+
+Warning: RRTConnect: Skipping invalid start state (invalid state)
+         at line 248 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/base/src/Planner.cpp
+Warning: RRTConnect: Skipping invalid start state (invalid state)
+         at line 248 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/base/src/Planner.cpp
+Warning: RRTConnect: Skipping invalid start state (invalid state)
+         at line 248 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/base/src/Planner.cpp
+Debug:   RRTConnect: Discarded start state RealVectorState [-0.515517 0.138503 2.0789 -0.252606 1.49957 -0.0163687 -2.11737 -0.704233]
+
+Debug:   RRTConnect: Discarded start state RealVectorState [-0.515517 0.138503 2.3234 -0.396203 0.905668 0.196992 -2.01773 1.13587]
+
+Warning: RRTConnect: Skipping invalid start state (invalid state)
+         at line 248 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/base/src/Planner.cpp
+Debug:   RRTConnect: Discarded start state RealVectorState [-0.515517 0.138503 2.80891 -0.91518 0.361021 -2.44391 -1.62403 2.31265]
+
+Warning: RRTConnect: Skipping invalid start state (invalid state)
+         at line 248 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/base/src/Planner.cpp
+Debug:   RRTConnect: Discarded start state RealVectorState [0.504808 0.272515 -0.528936 -0.187434 2.93223 -1.5623 -1.67101 -0.917984]
+
+Info:    RRTConnect: Starting planning with 33 states already in datastructure
+Debug:   RRTConnect: Discarded goal state:
+RealVectorState [0.0158494 -0.0135307 -0.632387 -2.63009 2.93534 -0.117427 -1.09221 -0.514069]
+
+Warning: RRTConnect: Skipping invalid goal state (invalid state)
+         at line 311 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/base/src/Planner.cpp
+Debug:   RRTConnect: Discarded goal state:
+RealVectorState [0.504808 0.272515 -2.09006 -2.35279 2.20972 0.0833428 -1.63157 2.82001]
+
+Warning: RRTConnect: Skipping invalid goal state (invalid state)
+         at line 311 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/base/src/Planner.cpp
+Warning: RRTConnect: Skipping invalid goal state (invalid state)
+         at line 311 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/base/src/Planner.cpp
+Debug:   RRTConnect: Discarded goal state:
+RealVectorState [0.504808 0.272515 -2.31265 -2.28572 2.5901 2.09494 -2.19353 -0.995203]
+
+Debug:   RRTConnect: Discarded goal state:
+RealVectorState [0.504808 0.272515 1.10628 -0.166788 2.7441 0.226499 -1.65717 -2.25958]
+
+Warning: RRTConnect: Skipping invalid goal state (invalid state)
+         at line 311 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/base/src/Planner.cpp
+Warning: RRTConnect: Skipping invalid goal state (invalid state)
+         at line 311 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/base/src/Planner.cpp
+Debug:   RRTConnect: Discarded goal state:
+RealVectorState [0.504808 0.272515 0.666445 -0.55246 1.56121 -0.00512099 -2.62486 0.67092]
+
+Info:    RRTConnect: Created 201 states (85 start + 116 goal)
+[0m[INFO] [1793537871.460609549]: [OMPL RRT-Connect] success states=10 time=16.713[0m
+[0m[INFO] [1793537871.460699966]: [bridge ablation] rrt_connect=1 path_nodes=10[0m
+BRIDGE_RESULT,height=0.600000,mode=local_multi,frontend_only=1,trial=16,seed=7016,start_y=1.500000,goal_y=1.500000,success=1,planned=1,within_budget=1,wall_ms=180.955000,init_ms=-1.000000,optimize_ms=-1.000000
+continous_failures_count: 0
+[0m[INFO] [1793537871.647055758]: [bridge ablation] mode=3 astar=1 initial_search=1[0m
+BRIDGE_RESULT,height=0.600000,mode=local_multi,frontend_only=1,trial=17,seed=7017,start_y=1.500000,goal_y=1.500000,success=1,planned=1,within_budget=1,wall_ms=155.029542,init_ms=-1.000000,optimize_ms=-1.000000
+continous_failures_count: 0
+[0m[INFO] [1793537871.828798299]: [bridge ablation] mode=3 astar=1 initial_search=0[0m
+[0m[INFO] [1793537871.828875258]: [bridge ablation] fallback_start=61 fallback_goal=41[0m
+[0m[INFO] [1793537871.829285758]: [bridge ablation] free_start=61 free_goal=41[0m
+[0m[INFO] [1793537871.829408758]: [bridge ablation] direct_pair=0[0m
+[0m[INFO] [1793537871.837774883]: [bridge ablation] free_via=104 via_pair=0[0m
+Debug:   RRTConnect: Planner range detected to be 2.543600
+Debug:   RRTConnect: Discarded start state RealVectorState [-0.515517 0.138503 -1.15811 -2.90322 2.06412 -0.677875 -1.85312 -0.69833]
+
+Error:   Random number generation already started. Changing seed now will not lead to deterministic sampling.
+         at line 78 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/util/src/RandomNumbers.cpp
+Warning: RRTConnect: Skipping invalid start state (invalid state)
+         at line 248 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/base/src/Planner.cpp
+Warning: RRTConnect: Skipping invalid start state (invalid state)
+         at line 248 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/base/src/Planner.cpp
+Warning: RRTConnect: Skipping invalid start state (invalid state)
+         at line 248 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/base/src/Planner.cpp
+Debug:   RRTConnect: Discarded start state RealVectorState [-0.515517 0.138503 -0.690441 -1.80517 1.24657 0.84128 -3.47673 1.61146]
+
+Debug:   RRTConnect: Discarded start state RealVectorState [-0.515517 0.138503 -0.807807 -2.37708 2.40156 1.16249 -2.3496 -1.16206]
+
+Debug:   RRTConnect: Discarded start state RealVectorState [-0.515517 0.138503 2.11002 -0.610998 1.38416 -0.815041 -1.4796 2.62059]
+
+Debug:   RRTConnect: Discarded start state RealVectorState [-0.515517 0.138503 2.18949 -0.70894 0.181985 -2.32956 -2.11381 0.615734]
+
+Warning: RRTConnect: Skipping invalid start state (invalid state)
+         at line 248 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/base/src/Planner.cpp
+Warning: RRTConnect: Skipping invalid start state (invalid state)
+         at line 248 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/base/src/Planner.cpp
+Warning: RRTConnect: Skipping invalid start state (invalid state)
+         at line 248 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/base/src/Planner.cpp
+Debug:   RRTConnect: Discarded start state RealVectorState [-0.515517 0.138503 2.49859 -0.906977 1.97067 0.522741 -0.937192 -2.01096]
+
+Info:    RRTConnect: Starting planning with 55 states already in datastructure
+Debug:   RRTConnect: Discarded goal state:
+RealVectorState [0.504808 0.272515 1.04855 -0.523348 2.6138 2.21906 -0.153478 1.76383]
+
+Warning: RRTConnect: Skipping invalid goal state (invalid state)
+         at line 311 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/base/src/Planner.cpp
+Warning: RRTConnect: Skipping invalid goal state (invalid state)
+         at line 311 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/base/src/Planner.cpp
+Debug:   RRTConnect: Discarded goal state:
+RealVectorState [0.504808 0.272515 1.08574 -0.403226 1.93279 -1.19587 -3.23604 -2.72694]
+
+Warning: RRTConnect: Skipping invalid goal state (invalid state)
+         at line 311 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/base/src/Planner.cpp
+Debug:   RRTConnect: Discarded goal state:
+RealVectorState [0.504808 0.272515 0.20349 -1.0043 1.04534 -0.418648 -3.04087 1.73031]
+
+Info:    RRTConnect: Created 154 states (87 start + 67 goal)
+[0m[INFO] [1793537871.847679883]: [OMPL RRT-Connect] success states=7 time=9.577[0m
+[0m[INFO] [1793537871.847745508]: [bridge ablation] rrt_connect=1 path_nodes=7[0m
+BRIDGE_RESULT,height=0.600000,mode=local_multi,frontend_only=1,trial=18,seed=7018,start_y=1.500000,goal_y=1.500000,success=1,planned=1,within_budget=1,wall_ms=172.548792,init_ms=-1.000000,optimize_ms=-1.000000
+Error:   Random number generation already started. Changing seed now will not lead to deterministic sampling.
+         at line 78 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/util/src/RandomNumbers.cpp
+Warning: RRTConnect: Skipping invalid start state (invalid state)
+         at line 248 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/base/src/Planner.cpp
+continous_failures_count: 0
+[0m[INFO] [1793537872.029786633]: [bridge ablation] mode=3 astar=1 initial_search=0[0m
+[0m[INFO] [1793537872.029867258]: [bridge ablation] fallback_start=46 fallback_goal=49[0m
+[0m[INFO] [1793537872.030273133]: [bridge ablation] free_start=46 free_goal=49[0m
+[0m[INFO] [1793537872.030423799]: [bridge ablation] direct_pair=0[0m
+[0m[INFO] [1793537872.043250799]: [bridge ablation] free_via=140 via_pair=0[0m
+Debug:   RRTConnect: Planner range detected to be 2.543600
+Debug:   RRTConnect: Discarded start state RealVectorState [-0.515517 0.138503 -1.37649 -2.54729 1.42011 -0.910278 -0.948283 -0.394322]
+
+Debug:   RRTConnect: Discarded start state RealVectorState [-0.515517 0.138503 -0.621195 -1.45721 0.946008 -0.240178 -0.836728 -0.295643]
+
+Debug:   RRTConnect: Discarded start state RealVectorState [-0.515517 0.138503 -0.707475 -1.64149 0.910844 2.89181 -3.00774 0.508982]
+
+Debug:   RRTConnect: Discarded start state RealVectorState [-0.515517 0.138503 -0.883522 -1.95721 1.03107 -1.06403 -0.385266 0.656441]
+
+Debug:   RRTConnect: Discarded start state RealVectorState [-0.515517 0.138503 -0.980301 -2.12529 1.5509 -0.784985 -2.69792 1.59199]
+
+Warning: RRTConnect: Skipping invalid start state (invalid state)
+         at line 248 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/base/src/Planner.cpp
+Warning: RRTConnect: Skipping invalid start state (invalid state)
+         at line 248 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/base/src/Planner.cpp
+Warning: RRTConnect: Skipping invalid start state (invalid state)
+         at line 248 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/base/src/Planner.cpp
+Warning: RRTConnect: Skipping invalid start state (invalid state)
+         at line 248 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/base/src/Planner.cpp
+Warning: RRTConnect: Skipping invalid start state (invalid state)
+         at line 248 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/base/src/Planner.cpp
+Debug:   RRTConnect: Discarded start state RealVectorState [-0.515517 0.138503 2.60114 -0.430239 2.23745 -2.03072 -1.96437 -0.245747]
+
+Info:    RRTConnect: Starting planning with 40 states already in datastructure
+Warning: RRTConnect: Skipping invalid goal state (invalid state)
+         at line 311 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/base/src/Planner.cpp
+Debug:   RRTConnect: Discarded goal state:
+RealVectorState [0.504808 0.272515 -2.1218 -2.56067 2.99936 0.706247 -1.34374 0.974277]
+
+Warning: RRTConnect: Skipping invalid goal state (invalid state)
+         at line 311 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/base/src/Planner.cpp
+Debug:   RRTConnect: Discarded goal state:
+RealVectorState [0.504808 0.272515 -2.27942 -1.3447 1.00654 -0.852601 -1.16092 3.00443]
+
+Warning: RRTConnect: Skipping invalid goal state (invalid state)
+         at line 311 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/base/src/Planner.cpp
+Debug:   RRTConnect: Discarded goal state:
+RealVectorState [0.504808 0.272515 0.539926 -0.55618 0.313142 -1.07678 0.132551 -1.36164]
+
+Info:    RRTConnect: Created 385 states (180 start + 205 goal)
+[0m[INFO] [1793537872.080612299]: [OMPL RRT-Connect] success states=7 time=37.088[0m
+[0m[INFO] [1793537872.080699174]: [bridge ablation] rrt_connect=1 path_nodes=7[0m
+BRIDGE_RESULT,height=0.600000,mode=local_multi,frontend_only=1,trial=19,seed=7019,start_y=1.500000,goal_y=1.500000,success=1,planned=1,within_budget=1,wall_ms=205.212000,init_ms=-1.000000,optimize_ms=-1.000000
+continous_failures_count: 0
+[0m[INFO] [1793537872.263965550]: [bridge ablation] mode=3 astar=1 initial_search=0[0m
+[0m[INFO] [1793537872.264066716]: [bridge ablation] fallback_start=44 fallback_goal=42[0m
+[0m[INFO] [1793537872.264398883]: [bridge ablation] free_start=44 free_goal=42[0m
+[0m[INFO] [1793537872.264488925]: [bridge ablation] direct_pair=0[0m
+[0m[INFO] [1793537872.271720216]: [bridge ablation] free_via=94 via_pair=0[0m
+Debug:   RRTConnect: Planner range detected to be 2.543600
+Error:   Random number generation already started. Changing seed now will not lead to deterministic sampling.
+         at line 78 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/util/src/RandomNumbers.cpp
+Warning: RRTConnect: Skipping invalid start state (invalid state)
+         at line 248 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/base/src/Planner.cpp
+Warning: RRTConnect: Skipping invalid start state (invalid state)
+         at line 248 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/base/src/Planner.cpp
+Warning: RRTConnect: Skipping invalid start state (invalid state)
+         at line 248 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/base/src/Planner.cpp
+Debug:   RRTConnect: Discarded start state RealVectorState [-0.515517 0.138503 -0.928228 -0.702314 0.600538 -0.811441 -0.754243 2.84852]
+
+Debug:   RRTConnect: Discarded start state RealVectorState [-0.515517 0.138503 2.38199 -0.29789 1.56402 -1.13961 -1.21502 -0.850379]
+
+Debug:   RRTConnect: Discarded start state RealVectorState [-0.515517 0.138503 2.42716 -0.765234 0.864786 1.98335 -3.054 2.6446]
+
+Info:    RRTConnect: Starting planning with 41 states already in datastructure
+Debug:   RRTConnect: Discarded goal state:
+RealVectorState [0.504808 0.272515 -1.81315 -2.72453 2.66306 0.643421 -1.03805 -1.87872]
+
+Warning: RRTConnect: Skipping invalid goal state (invalid state)
+         at line 311 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/base/src/Planner.cpp
+Warning: RRTConnect: Skipping invalid goal state (invalid state)
+         at line 311 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/base/src/Planner.cpp
+Debug:   RRTConnect: Discarded goal state:
+RealVectorState [0.504808 0.272515 -1.93669 -2.41227 2.16804 -0.720843 -0.709866 0.309632]
+
+Debug:   RRTConnect: Discarded goal state:
+RealVectorState [0.504808 0.272515 -2.35353 -2.50225 2.86963 -2.20648 -3.56409 1.46504]
+
+Warning: RRTConnect: Skipping invalid goal state (invalid state)
+         at line 311 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/base/src/Planner.cpp
+Debug:   RRTConnect: Discarded goal state:
+RealVectorState [0.504808 0.272515 0.902815 -0.0751886 0.971604 -0.996189 -1.14059 1.34979]
+
+Warning: RRTConnect: Skipping invalid goal state (invalid state)
+         at line 311 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/base/src/Planner.cpp
+Info:    RRTConnect: Created 937 states (458 start + 479 goal)
+[0m[INFO] [1793537872.375141466]: [OMPL RRT-Connect] success states=6 time=103.128[0m
+[0m[INFO] [1793537872.375288966]: [bridge ablation] rrt_connect=1 path_nodes=6[0m
+BRIDGE_RESULT,height=0.600000,mode=local_multi,frontend_only=1,trial=20,seed=7020,start_y=1.500000,goal_y=1.500000,success=1,planned=1,within_budget=1,wall_ms=266.788750,init_ms=-1.000000,optimize_ms=-1.000000
+continous_failures_count: 0
+[0m[INFO] [1793537872.560615466]: [bridge ablation] mode=3 astar=1 initial_search=0[0m
+[0m[INFO] [1793537872.560719466]: [bridge ablation] fallback_start=55 fallback_goal=162[0m
+[0m[INFO] [1793537872.561553591]: [bridge ablation] free_start=55 free_goal=162[0m
+[0m[INFO] [1793537872.561724550]: [bridge ablation] direct_pair=0[0m
+[0m[INFO] [1793537872.570499216]: [bridge ablation] free_via=100 via_pair=0[0m
+Debug:   RRTConnect: Planner range detected to be 2.620987
+Debug:   RRTConnect: Discarded start state RealVectorState [-0.515517 0.138503 -1.08953 -2.73435 1.98751 2.65609 -1.91986 0.676274]
+
+Debug:   RRTConnect: Discarded start state RealVectorState [-0.515517 0.138503 -1.35056 -3.03359 2.22319 1.73743 -1.80406 2.28334]
+
+Error:   Random number generation already started. Changing seed now will not lead to deterministic sampling.
+         at line 78 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/util/src/RandomNumbers.cpp
+Warning: RRTConnect: Skipping invalid start state (invalid state)
+         at line 248 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/base/src/Planner.cpp
+Warning: RRTConnect: Skipping invalid start state (invalid state)
+         at line 248 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/base/src/Planner.cpp
+Debug:   RRTConnect: Discarded start state RealVectorState [-0.515517 0.138503 -0.458931 -1.29987 0.868037 0.510644 -1.54178 0.705952]
+
+Debug:   RRTConnect: Discarded start state RealVectorState [-0.515517 0.138503 -0.458931 -1.55608 1.11845 0.854295 -0.812596 -0.508787]
+
+Warning: RRTConnect: Skipping invalid start state (invalid state)
+         at line 248 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/base/src/Planner.cpp
+Warning: RRTConnect: Skipping invalid start state (invalid state)
+         at line 248 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/base/src/Planner.cpp
+Warning: RRTConnect: Skipping invalid start state (invalid state)
+         at line 248 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/base/src/Planner.cpp
+Warning: RRTConnect: Skipping invalid start state (invalid state)
+         at line 248 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/base/src/Planner.cpp
+Debug:   RRTConnect: Discarded start state RealVectorState [-0.515517 0.138503 2.35716 -0.295128 0.690227 -1.18525 -1.38436 1.57208]
+
+Debug:   RRTConnect: Discarded start state RealVectorState [-0.515517 0.138503 2.5693 -0.52191 2.70629 1.99309 -1.33258 -0.514713]
+
+Info:    RRTConnect: Starting planning with 49 states already in datastructure
+Info:    RRTConnect: Created 57 states (52 start + 5 goal)
+[0m[INFO] [1793537872.572214216]: [OMPL RRT-Connect] success states=6 time=1.357[0m
+[0m[INFO] [1793537872.572264883]: [bridge ablation] rrt_connect=1 path_nodes=6[0m
+BRIDGE_RESULT,height=0.600000,mode=local_multi,frontend_only=1,trial=21,seed=7021,start_y=1.500000,goal_y=1.500000,success=1,planned=1,within_budget=1,wall_ms=168.159917,init_ms=-1.000000,optimize_ms=-1.000000
+continous_failures_count: 0
+[0m[INFO] [1793537872.754766466]: [bridge ablation] mode=3 astar=1 initial_search=0[0m
+[0m[INFO] [1793537872.754836591]: [bridge ablation] fallback_start=47 fallback_goal=48[0m
+[0m[INFO] [1793537872.755213300]: [bridge ablation] free_start=47 free_goal=48[0m
+[0m[INFO] [1793537872.755320925]: [bridge ablation] direct_pair=0[0m
+[0m[INFO] [1793537872.763710466]: [bridge ablation] free_via=96 via_pair=0[0m
+Debug:   RRTConnect: Planner range detected to be 2.543600
+Error:   Random number generation already started. Changing seed now will not lead to deterministic sampling.
+         at line 78 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/util/src/RandomNumbers.cpp
+Warning: Debug:   RRTConnect: Discarded start state RealVectorState [-0.515517 0.138503 -1.25242 -2.5285 1.87885 -0.891113 0.132996 -1.05355]
+
+RRTConnect: Skipping invalid start state (invalid state)
+         at line 248 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/base/src/Planner.cpp
+Warning: RRTConnect: Skipping invalid start state (invalid state)
+         at line 248 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/base/src/Planner.cpp
+Debug:   RRTConnect: Discarded start state RealVectorState [-0.515517 0.138503 -0.0780013 -1.98059 0.273337 -0.0129467 0.0172825 2.46325]
+
+Debug:   RRTConnect: Discarded start state RealVectorState [-0.515517 0.138503 2.54781 -0.695692 2.80382 2.83293 0.243203 0.435684]
+
+Debug:   RRTConnect: Discarded start state RealVectorState [-0.515517 0.138503 2.71881 -0.572326 2.47351 2.43659 -1.10386 -1.87697]
+
+Warning: RRTConnect: Skipping invalid start state (invalid state)
+         at line 248 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/base/src/Planner.cpp
+Warning: RRTConnect: Skipping invalid start state (invalid state)
+         at line 248 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/base/src/Planner.cpp
+Info:    RRTConnect: Starting planning with 43 states already in datastructure
+Warning: RRTConnect: Skipping invalid goal state (invalid state)
+         at line 311 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/base/src/Planner.cpp
+Debug:   RRTConnect: Discarded goal state:
+RealVectorState [0.0158494 -0.0135307 -0.570098 -2.60696 1.26014 -1.85383 -1.06045 2.10457]
+
+Warning: RRTConnect: Skipping invalid goal state (invalid state)
+         at line 311 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/base/src/Planner.cpp
+Debug:   RRTConnect: Discarded goal state:
+RealVectorState [0.504808 0.272515 -2.01542 -2.26951 1.79433 1.3437 -1.22587 0.30192]
+
+Warning: RRTConnect: Skipping invalid goal state (invalid state)
+         at line 311 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/base/src/Planner.cpp
+Debug:   RRTConnect: Discarded goal state:
+RealVectorState [0.504808 0.272515 0.387579 -0.868383 2.47137 0.530551 -1.19565 0.228705]
+
+Warning: RRTConnect: Skipping invalid goal state (invalid state)
+         at line 311 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/base/src/Planner.cpp
+Debug:   RRTConnect: Discarded goal state:
+RealVectorState [0.504808 0.272515 0.416414 -0.654448 0.634687 2.40379 -3.4219 -3.11786]
+
+Warning: RRTConnect: Skipping invalid goal state (invalid state)
+         at line 311 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/base/src/Planner.cpp
+Debug:   RRTConnect: Discarded goal state:
+RealVectorState [0.504808 0.272515 0.519587 -0.178311 1.66507 -0.466192 -1.08109 -0.428168]
+
+Info:    RRTConnect: Created 607 states (312 start + 295 goal)
+[0m[INFO] [1793537872.828129175]: [OMPL RRT-Connect] success states=6 time=64.107[0m
+[0m[INFO] [1793537872.828270175]: [bridge ablation] rrt_connect=1 path_nodes=6[0m
+BRIDGE_RESULT,height=0.600000,mode=local_multi,frontend_only=1,trial=22,seed=7022,start_y=1.500000,goal_y=1.500000,success=1,planned=1,within_budget=1,wall_ms=227.798166,init_ms=-1.000000,optimize_ms=-1.000000
+continous_failures_count: 0
+[0m[INFO] [1793537873.012092175]: [bridge ablation] mode=3 astar=1 initial_search=0[0m
+[0m[INFO] [1793537873.012167967]: [bridge ablation] fallback_start=49 fallback_goal=36[0m
+[0m[INFO] [1793537873.012500550]: [bridge ablation] free_start=49 free_goal=36[0m
+[0m[INFO] [1793537873.012593925]: [bridge ablation] direct_pair=0[0m
+[0m[INFO] [1793537873.020592758]: [bridge ablation] free_via=99 via_pair=0[0m
+Debug:   RRTConnect: Planner range detected to be 2.543600
+Error:   Random number generation already started. Changing seed now will not lead to deterministic sampling.
+         at line 78 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/util/src/RandomNumbers.cpp
+Warning: RRTConnect: Skipping invalid start state (invalid state)
+         at line 248 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/base/src/Planner.cpp
+Debug:   RRTConnect: Discarded start state RealVectorState [-0.515517 0.138503 -0.330796 -1.6851 0.655923 0.169691 -0.645016 0.217441]
+
+Debug:   RRTConnect: Discarded start state RealVectorState [-0.515517 0.138503 -0.437884 -1.65825 0.742996 -2.77045 -2.48623 -0.405758]
+
+Warning: RRTConnect: Skipping invalid start state (invalid state)
+         at line 248 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/base/src/Planner.cpp
+Warning: RRTConnect: Skipping invalid start state (invalid state)
+         at line 248 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/base/src/Planner.cpp
+Debug:   RRTConnect: Discarded start state RealVectorState [-0.515517 0.138503 -0.667434 -0.971258 0.304585 0.71308 -0.708945 -2.71041]
+
+Debug:   RRTConnect: Discarded start state RealVectorState [-0.515517 0.138503 0.0475604 -1.78778 0.502396 -0.787677 -1.67151 -0.704997]
+
+Debug:   RRTConnect: Discarded start state RealVectorState [-0.515517 0.138503 0.061829 -1.53506 0.652576 -0.304532 -2.86278 -1.17093]
+
+Warning: RRTConnect: Skipping invalid start state (invalid state)
+         at line 248 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/base/src/Planner.cpp
+Warning: RRTConnect: Skipping invalid start state (invalid state)
+         at line 248 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/base/src/Planner.cpp
+Info:    RRTConnect: Starting planning with 44 states already in datastructure
+Debug:   RRTConnect: Discarded goal state:
+RealVectorState [0.0158494 -0.0135307 -1.26047 -2.9598 2.54189 -0.266003 -1.64171 -2.31642]
+
+Warning: RRTConnect: Skipping invalid goal state (invalid state)
+         at line 311 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/base/src/Planner.cpp
+Debug:   RRTConnect: Discarded goal state:
+RealVectorState [0.0158494 -0.0135307 2.30513 -0.125444 1.52751 0.432838 -1.89858 -0.998431]
+
+Warning: RRTConnect: Skipping invalid goal state (invalid state)
+         at line 311 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/base/src/Planner.cpp
+Warning: RRTConnect: Skipping invalid goal state (invalid state)
+         at line 311 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/base/src/Planner.cpp
+Debug:   RRTConnect: Discarded goal state:
+RealVectorState [0.504808 0.272515 0.180758 -0.0560053 0.445812 1.84861 -0.455686 -0.715413]
+
+Warning: RRTConnect: Skipping invalid goal state (invalid state)
+         at line 311 in /tmp/binarydeb/ros-noetic-ompl-1.6.0/src/ompl/base/src/Planner.cpp
+Debug:   RRTConnect: Discarded goal state:
+RealVectorState [0.504808 0.272515 0.993539 -0.668907 1.10417 2.29296 -3.14614 -1.82177]
+
+Info:    RRTConnect: Created 204 states (117 start + 87 goal)
+[0m[INFO] [1793537873.038296633]: [OMPL RRT-Connect] success states=4 time=17.440[0m
+[0m[INFO] [1793537873.038362342]: [bridge ablation] rrt_connect=1 path_nodes=4[0m
+BRIDGE_RESULT,height=0.600000,mode=local_multi,frontend_only=1,trial=23,seed=7023,start_y=1.500000,goal_y=1.500000,success=1,planned=1,within_budget=1,wall_ms=182.700125,init_ms=-1.000000,optimize_ms=-1.000000
+continous_failures_count: 0
+[0m[INFO] [1793537873.219849883]: [bridge ablation] mode=3 astar=1 initial_search=1[0m
+BRIDGE_RESULT,height=0.600000,mode=local_multi,frontend_only=1,trial=24,seed=7024,start_y=1.500000,goal_y=1.500000,success=1,planned=1,within_budget=1,wall_ms=154.332584,init_ms=-1.000000,optimize_ms=-1.000000
+destory manager
+[31m================================================================================REQUIRED process [bridge_ablation_probe-4] has died!
+process has finished cleanly
+log file: /root/.ros/log/d5c5753c-d5f3-11f1-99f3-5e358cbe3d51/bridge_ablation_probe-4*.log
+Initiating shutdown!
+================================================================================[0m
+
+auto-starting new master
+[1mprocess[master]: started with pid [50687][0m
+[1mROS_MASTER_URI=http://localhost:11311[0m
+]2;/ws/src/lns_remani/remani_planner/plan_manage/launch/bridge_ablation.launch http://localhost:11311
+[1msetting /run_id to d5c5753c-d5f3-11f1-99f3-5e358cbe3d51[0m
+[1mprocess[rosout-1]: started with pid [50697][0m
+started core service [/rosout]
+[1mprocess[map_generator-2]: started with pid [50700][0m
+[1mprocess[fake_mm-3]: started with pid [50701][0m
+[1mprocess[bridge_ablation_probe-4]: started with pid [50702][0m
+[bridge_ablation_probe-4] killing on exit
+[fake_mm-3] killing on exit
+[map_generator-2] killing on exit
+[rosout-1] killing on exit
+[master] killing on exit
+shutting down processing monitor...
+... shutting down processing monitor complete
+[1mdone[0m
