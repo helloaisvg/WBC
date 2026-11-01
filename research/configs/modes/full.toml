@@ -1,0 +1,10 @@
+name = "full"
+description = "Full recoverability-aware spatio-temporal REMANI-R."
+
+[overrides]
+weight_recoverability = "20000.0"
+weight_recovery_time = "5000.0"
+arm_extension_weight = "0.25"
+recovery_tolerance = "0.07"
+recovery_time_tolerance = "0.10"
+use_dynamic_prediction = "true"

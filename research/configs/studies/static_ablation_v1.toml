@@ -1,0 +1,17 @@
+name = "static_ablation_v1"
+modes = ["remani", "braking", "whole_body", "full"]
+scenarios = ["exp0", "exp1_random"]
+seeds = [30, 31, 32, 33, 34]
+
+[map]
+ground_obstacles = 20
+floating_obstacles = 30
+
+[dynamic]
+enabled = false
+
+[execution]
+startup_wait = 5
+run_seconds = 60
+stop_after_second_plan = true
+timeout_seconds = 3600

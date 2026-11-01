@@ -1,0 +1,16 @@
+<launch>
+  <arg name="map_seed" default="30"/>
+  <arg name="planner_param_file"
+       default="$(find remani_planner)/config/remani_planner_param.yaml"/>
+  <include file="$(find remani_planner)/launch/run_in_sim.launch">
+    <arg name="exp_param_file"
+         value="$(find remani_planner)/config/exp1_random_param.yaml"/>
+    <arg name="map_seed" value="$(arg map_seed)"/>
+    <arg name="planner_param_file" value="$(arg planner_param_file)"/>
+    <arg name="dynamic_obs_num" value="2"/>
+    <arg name="dynamic_obs_cross_x" value="-0.2"/>
+    <arg name="dynamic_obs_cross_y" value="1.5"/>
+    <arg name="dynamic_obs_cross_offset" value="10.0"/>
+    <arg name="dynamic_obs_spawn_delay" value="10.0"/>
+  </include>
+</launch>

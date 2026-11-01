@@ -1,0 +1,10 @@
+name = "current_only"
+description = "Collision-only objective evaluated at the current planner time."
+
+[overrides]
+weight_recoverability = "0.0"
+weight_recovery_time = "0.0"
+arm_extension_weight = "0.0"
+recovery_tolerance = "10.0"
+recovery_time_tolerance = "10.0"
+use_dynamic_prediction = "false"

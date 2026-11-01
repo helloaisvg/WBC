@@ -1,0 +1,11 @@
+<launch>
+  <include file="$(find remani_planner)/launch/run_in_sim.launch">
+    <arg name="exp_param_file"
+         value="$(find remani_planner)/config/compare_exp0_param.yaml"/>
+    <arg name="planner_param_file"
+         value="$(find remani_planner)/config/remani_planner_param.yaml"/>
+    <arg name="map_seed" value="30"/>
+    <arg name="dynamic_obs_num" value="0"/>
+    <arg name="visualization_skeleton_only" value="false"/>
+  </include>
+</launch>

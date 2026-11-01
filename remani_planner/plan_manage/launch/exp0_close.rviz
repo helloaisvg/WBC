@@ -1,0 +1,76 @@
+Visualization Manager:
+  Class: ""
+  Displays:
+    - Alpha: 0.35
+      Cell Size: 0.5
+      Class: rviz/Grid
+      Color: 160; 160; 164
+      Enabled: true
+      Line Style:
+        Line Width: 0.02
+        Value: Lines
+      Name: Grid
+      Offset:
+        X: 0
+        Y: 0
+        Z: 0
+      Plane: XY
+      Plane Cell Count: 24
+      Reference Frame: <Fixed Frame>
+      Value: true
+    - Class: rviz/MarkerArray
+      Enabled: true
+      Marker Topic: /map_generator/dynamic_obstacles
+      Name: Dynamic Obstacles
+      Namespaces:
+        dynamic_obstacles: true
+      Queue Size: 10
+      Value: true
+    - Class: rviz/MarkerArray
+      Enabled: true
+      Marker Topic: /model_vis/vis_mm
+      Name: Robot Mesh
+      Namespaces:
+        vis_mm_odom: true
+      Queue Size: 20
+      Value: true
+    - Class: rviz/MarkerArray
+      Enabled: true
+      Marker Topic: /model_vis/vis_mm_skeleton
+      Name: Joint Skeleton
+      Namespaces:
+        vis_mm_skeleton: true
+      Queue Size: 10
+      Value: true
+  Enabled: true
+  Global Options:
+    Background Color: 255; 255; 255
+    Default Light: true
+    Fixed Frame: world
+    Frame Rate: 10
+  Name: root
+  Tools:
+    - Class: rviz/Interact
+    - Class: rviz/MoveCamera
+    - Class: rviz/Select
+  Value: true
+  Views:
+    Current:
+      Class: rviz/ThirdPersonFollower
+      Distance: 2.5
+      Enable Stereo Rendering:
+        Stereo Eye Separation: 0.06
+        Stereo Focal Distance: 1
+        Swap Stereo Eyes: false
+        Value: false
+      Invert Z Axis: false
+      Name: Current View
+      Near Clip Distance: 0.01
+      Pitch: 0.35
+      Target Frame: mm_base
+      Yaw: 0
+Window Geometry:
+  Height: 360
+  Width: 640
+  Hide Left Dock: true
+  Hide Right Dock: true

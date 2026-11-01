@@ -1,0 +1,2 @@
+mode,scenario,seed,obs_num,float_obs_num,dynamic_obs_num,plans,wall_ms_1,wall_ms_2,init_ms_1,init_ms_2,opt_ms_1,opt_ms_2,margin_m_1,margin_m_2,recovery_slack_s_1,recovery_slack_s_2,replanning_events,recovery_threats,temporal_repairs,collision_warnings,emergency_stops
+full,exp0,30,20,30,2,3,231.982,27.469,97.189,0.053,132.255,26.979,1.9522,-0.0519,0.8173,1.0275,1,1,1,1,0

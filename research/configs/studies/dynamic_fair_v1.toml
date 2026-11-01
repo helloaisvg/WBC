@@ -1,0 +1,25 @@
+name = "dynamic_fair_v1"
+modes = ["current_only", "full"]
+scenarios = ["exp0"]
+seeds = [30, 31, 32, 33, 34]
+
+[map]
+ground_obstacles = 20
+floating_obstacles = 30
+
+[dynamic]
+enabled = true
+count = 2
+speed = 0.9
+radius = 0.45
+cross_x = -0.2
+cross_y = 0.65
+z = 0.62
+cross_offset = 10.0
+spawn_delay = 10.0
+
+[execution]
+startup_wait = 5
+run_seconds = 90
+stop_after_second_plan = false
+timeout_seconds = 5400
