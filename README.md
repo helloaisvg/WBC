@@ -18,6 +18,19 @@ The current workspace is the REMANI-R research mainline:
 - trajectory-arrival-time queries for moving spherical obstacles;
 - field-aware randomized experiments and paired-statistics tooling.
 
+## REMANI-R Fair Dynamic Benchmark
+
+The original REMANI, REMANI-R, and TopAY use the same 8 × 8 m map, robot,
+start, goals, and moving-sphere track. REMANI-R predicts the sphere at each
+trajectory-arrival time.
+
+[![REMANI-R fair dynamic benchmark](research/figures/fair_remani_r_dynamic_preview.gif)](research/media/fair_remani_r_dynamic.mp4)
+
+**REMANI-R: 2/2 goals, 0 emergency stops.**
+
+[Watch the full-resolution MP4](research/media/fair_remani_r_dynamic.mp4) ·
+[Protocol and three-way results](research/docs/fair_dynamic_benchmark.md)
+
 ## Research Pipeline
 
 The research pipeline is under [`research/`](research/README.md):
