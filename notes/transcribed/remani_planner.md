@@ -36,9 +36,9 @@
 
 2. **机器人构型空间（C-space）：** 对“底盘 + $n$ 轴机械臂”系统，全身构型表示为：
 
-   $$
+   ```math
    q = [x_b, y_b, \theta_b, q_1, \dots, q_n]^T
-   $$
+   ```
 
    其中 $x_b, y_b, \theta_b$ 为底盘平面位置与朝向，$q_1, \dots, q_n$ 为机械臂关节变量。
 
@@ -52,13 +52,13 @@
 
 4. **全身轨迹优化：** 同时关注位置、速度、加速度与加加速度（Jerk），例：
 
-   $$
+   ```math
    \min_{q(t), T} J_{\text{smooth}} + \lambda_c J_{\text{collision}} + \lambda_d J_{\text{dynamic}} + \lambda_t J_{\text{time}}
-   $$
+   ```
 
-   $$
+   ```math
    \text{s.t.} \quad q(0) = q_0, \quad q(T) = q_{\text{final}}
-   $$
+   ```
 
    其中 $q(t)$ 为随时间变化的轨迹，$T$ 为总时长，$\lambda$ 为各项权重：
 
@@ -144,9 +144,9 @@
 
 **核心系数映射：** 将**中间必经航点** $q$ 与**各段持续时长** $T$ 作为优化变量。针对最小控制努力（Minimum Control Effort）问题：
 
-$$
+```math
 \min_{p(t)} \int_{t_0}^{t_m} p^{(s)}(t)^T W p^{(s)}(t) \, dt
-$$
+```
 
 构造带状线性方程组 $M(T) c = b(q)$，直接解出多项式系数 $c = \mathcal{M}(q, T)$，优化时再通过链式法则将目标函数对 $c$ 的梯度传回 $(q, T)$。
 
@@ -154,23 +154,23 @@ $$
 
 设单关节在 $2\text{ s}$ 内从 $0\text{ rad}$ 转至 $1\text{ rad}$，固定在 $t = 1\text{ s}$ 经过中间点 $m = 0.4\text{ rad}$，且起终点静止（速度、加速度均为 $0$）。采用两段五次多项式参数化（各自使用局部时间 $t \in [0, 1]$ 与 $\tau = t - 1 \in [0, 1]$）：
 
-$$
+```math
 p_1(t) = c_0 + c_1 t + c_2 t^2 + c_3 t^3 + c_4 t^4 + c_5 t^5, \quad t \in [0, 1]
-$$
+```
 
-$$
+```math
 p_2(\tau) = d_0 + d_1 \tau + d_2 \tau^2 + d_3 \tau^3 + d_4 \tau^4 + d_5 \tau^5, \quad \tau \in [0, 1]
-$$
+```
 
 1. **清点约束与剩余自由度**（$12 \rightarrow 2$）：
 
    两段共 $6 + 6 = 12$ 个待定系数，已知硬约束共 $10$ 个方程：
 
-   **起点边界**（$3$ 个）：$p_1(0) = 0, \; \dot{p}_1(0) = 0, \; \ddot{p}_1(0) = 0$（直接推出 $c_0 = c_1 = c_2 = 0$）；
+   **起点边界**（$3$ 个）：$p_1(0) = 0, \quad \dot{p}_1(0) = 0, \quad \ddot{p}_1(0) = 0$（直接推出 $c_0 = c_1 = c_2 = 0$）；
 
-   **终点边界**（$3$ 个）：$p_2(1) = 1, \; \dot{p}_2(1) = 0, \; \ddot{p}_2(1) = 0$；
+   **终点边界**（$3$ 个）：$p_2(1) = 1, \quad \dot{p}_2(1) = 0, \quad \ddot{p}_2(1) = 0$；
 
-   **中间点连接**（$4$ 个）：第一段末端和第二段起点位置都必须等于 $m$（$p_1(1) = m, \; p_2(0) = m$，共 $2$ 个），外加中间点速度连续（$\dot{p}_1(1) = \dot{p}_2(0)$，$1$ 个）、加速度连续（$\ddot{p}_1(1) = \ddot{p}_2(0)$，$1$ 个）。
+   **中间点连接**（$4$ 个）：第一段末端和第二段起点位置都必须等于 $m$（$p_1(1) = m, \quad p_2(0) = m$，共 $2$ 个），外加中间点速度连续（$\dot{p}_1(1) = \dot{p}_2(0)$，$1$ 个）、加速度连续（$\ddot{p}_1(1) = \ddot{p}_2(0)$，$1$ 个）。
 
    因此剩余自由度为 $12 - 10 = 2$ 个，正好对应中间点的未知速度 $v_m$ 和未知加速度 $a_m$。一旦给定 $(m, v_m, a_m)$，线性联立即可把 $c_3, c_4, c_5$ 和 $d_0 \sim d_5$ 全部唯一表示出来。
 
@@ -178,21 +178,21 @@ $$
 
    最小化 Jerk（取 $s = 3$），对两段分别求三阶导数：
 
-   $$
-   \dddot{p}_1(t) = 6c_3 + 24c_4 t + 60c_5 t^2, \quad \dddot{p}_2(\tau) = 6d_3 + 24d_4 \tau + 60d_5 \tau^2
-   $$
+   ```math
+   p_1^{(3)}(t) = 6c_3 + 24c_4 t + 60c_5 t^2, \quad p_2^{(3)}(\tau) = 6d_3 + 24d_4 \tau + 60d_5 \tau^2
+   ```
 
    利用幂函数积分公式 $\int_0^1 t^n \, dt = \frac{1}{n+1}$，分别展开平方并在 $[0, 1]$ 上积分得到关于 $(c_3, c_4, c_5)$ 和 $(d_3, d_4, d_5)$ 的二次型；再把由 $(m = 0.4, v_m, a_m)$ 解出的系数代回，两段积分相加得到总平滑代价：
 
-   $$
-   J(v_m, a_m) = \int_0^1 \dddot{p}_1(t)^2 \, dt + \int_0^1 \dddot{p}_2(\tau)^2 \, d\tau = 384 v_m^2 - 720 v_m + 18 a_m^2 - 24 a_m + 374.4
-   $$
+   ```math
+   J(v_m, a_m) = \int_0^1 p_1^{(3)}(t)^2 \, dt + \int_0^1 p_2^{(3)}(\tau)^2 \, d\tau = 384 v_m^2 - 720 v_m + 18 a_m^2 - 24 a_m + 374.4
+   ```
 
 3. **极值消元**（为什么不用管 $v_m, a_m$）：
 
-   如果强制每段“到点停下”（令 $v_m = 0, \; a_m = 0$），代价高达 $J = 374.4$；
+   如果强制每段“到点停下”（令 $v_m = 0, \quad a_m = 0$），代价高达 $J = 374.4$；
 
-   允许平滑连续通过，直接对 $v_m, a_m$ 求偏导置零（$\frac{\partial J}{\partial v_m} = 0, \; \frac{\partial J}{\partial a_m} = 0$），解得最优中间状态 $v_m = 0.9375\text{ rad/s}, \; a_m = \frac{2}{3}\text{ rad/s}^2$，此时最小代价骤降至 $J_{\min} = 28.9$。
+   允许平滑连续通过，直接对 $v_m, a_m$ 求偏导置零（$\frac{\partial J}{\partial v_m} = 0, \quad \frac{\partial J}{\partial a_m} = 0$），解得最优中间状态 $v_m = 0.9375\text{ rad/s}, \quad a_m = \frac{2}{3}\text{ rad/s}^2$，此时最小代价骤降至 $J_{\min} = 28.9$。
 
    **对应回 MINCO 映射：** 在固定航点 $m$ 与时长 $T$ 时，令控制努力积分取极值，数学上等价于在中间点自动补齐了高阶导数连续条件（三阶 Jerk 连续与四阶 Snap 连续，恰好补足最后 $2$ 个线性方程，凑满 $10 + 2 = 12$ 个方程）。所以 MINCO 只需输入航点位置 $q$ 和时间 $T$，就能通过 $M(T)c = b(q)$ 一步算出最优系数 $c$，无需把各阶导数塞进优化变量。
 
@@ -200,9 +200,9 @@ $$
 
    若把中间位置从固定的 $0.4$ 改为待优化变量 $m$，按同上步骤消去 $(v_m, a_m)$ 后，整条轨迹的最小 Jerk 代价只剩 $m$ 的函数：
 
-   $$
+   ```math
    J_{\min}(m) = 22.5 + 640(m - 0.5)^2
-   $$
+   ```
 
    无障碍物时，优化器自然收敛到中点 $m = 0.5$（最平滑，$J = 22.5$）；若 $0.5$ 附近存在障碍物，后端总目标里的避障惩罚项会把 $m$ 推偏（例如挤到 $0.4$），本质就是牺牲一点平滑代价来换取不碰撞。
 
@@ -210,9 +210,9 @@ $$
 
 把整条离散路点轨迹 $\xi = (q_1, q_2, \dots, q_n)^T$ 看作高维空间中的一个点，最小化综合成本：
 
-$$
+```math
 U(\xi) = f_{\text{prior}}(\xi) + f_{\text{obs}}(\xi)
-$$
+```
 
 **平滑先验项** $f_{\text{prior}}(\xi)$：构造二次型 $f_{\text{prior}}(\xi) = \frac{1}{2} \xi^T A \xi + b^T \xi + c$，梯度为线性 $\nabla f_{\text{prior}} = A \xi + b$。利用**有限差分矩阵**近似导数：
 
@@ -226,9 +226,9 @@ $$
 
 **协变梯度更新：**
 
-$$
+```math
 \xi_{k+1} = \xi_k - \frac{1}{\lambda} A^{-1} \nabla U(\xi_k)
-$$
+```
 
 区别于普通梯度下降 $-\alpha g$，左乘预条件矩阵 $A^{-1}$ 相当于在平滑度量下走最速下降方向——当某个局部路点被障碍物排斥推开时，$A^{-1}$ 会把局部排斥力平滑地分摊扩散到整条轨迹上，保持整体形变自然。
 
@@ -242,13 +242,13 @@ $$
 
 3. **Softmax 转概率权重**（代价越低的轨迹段权重越高）：
 
-   $$
+   ```math
    P(\hat{\theta}_{k,i}) = \frac{\exp\left(-\frac{1}{\lambda} S(\hat{\theta}_{k,i})\right)}{\sum_{l=1}^K \exp\left(-\frac{1}{\lambda} S(\hat{\theta}_{l,i})\right)}
-   $$
+   ```
 
 4. **加权平均求期望扰动：** $\delta \theta_i = \sum_{k=1}^K P(\hat{\theta}_{k,i}) [\epsilon_k]_i$。
 
-5. **平滑投影：** 各时间步独立加权拼出的扰动可能不够连贯，乘上列归一化的平滑矩阵 $M = \operatorname{colnorm}(R^{-1})$ 做平滑投影：$\delta \theta \leftarrow M \delta \theta$。
+5. **平滑投影：** 各时间步独立加权拼出的扰动可能不够连贯，乘上列归一化的平滑矩阵 $M = \mathrm{colnorm}(R^{-1})$ 做平滑投影：$\delta \theta \leftarrow M \delta \theta$。
 
 6. **迭代更新：** $\theta \leftarrow \theta + \delta \theta$，重复上述过程直至收敛。
 
@@ -256,9 +256,9 @@ $$
 
 将运动规划直接建模为带非线性约束的优化问题：
 
-$$
+```math
 \min_{\xi} f(\xi) \quad \text{s.t.} \quad g(\xi) \le 0
-$$
+```
 
 其中 $f(\xi)$ 为路径长度或平滑度代价，$g(\xi)$ 为避障、关节限位等非线性约束。采用 **SQP（顺序二次规划）+ 信任域（Trust Region）** 求解：
 
@@ -280,21 +280,21 @@ $$
 
 **第** $1$ **层（最高优先级，如安全限位/避障/平衡）：**
 
-$$
+```math
 z_1^* = \arg\min_z \Vert A_1 z - b_1 \Vert_2^2 \quad \text{s.t.} \quad C z \le d
-$$
+```
 
 **第** $2$ **层（次高优先级，如末端位姿跟踪）：** 新增等式约束 $A_1 z = A_1 z_1^*$ 锁死第 $1$ 层的最优任务表现：
 
-$$
-z_2^* = \arg\min_z \Vert A_2 z - b_2 \Vert_2^2 \quad \text{s.t.} \quad A_1 z = A_1 z_1^*, \; C z \le d
-$$
+```math
+z_2^* = \arg\min_z \Vert A_2 z - b_2 \Vert_2^2 \quad \text{s.t.} \quad A_1 z = A_1 z_1^*, \quad C z \le d
+```
 
 **第** $L$ **层（低优先级，如姿态保持/关节居中）：**
 
-$$
-z_L^* = \arg\min_z \Vert A_L z - b_L \Vert_2^2 \quad \text{s.t.} \quad A_k z = A_k z_{L-1}^* \; (\forall k < L), \; C z \le d
-$$
+```math
+z_L^* = \arg\min_z \Vert A_L z - b_L \Vert_2^2 \quad \text{s.t.} \quad A_k z = A_k z_{L-1}^* \quad (\forall k < L), \quad C z \le d
+```
 
 > 注：全身路径规划和轨迹生成的算法学的时候比较直觉易懂，像有限差分那种构造协变来优化学的比较吃力数学略难但也能想通，这个笔记是根据初版我的手稿的转录而成，手稿记录在 https://github.com/helloaisvg/WBC/notes/handwritten
 
@@ -316,23 +316,23 @@ $$
 
 **后端规划空间降维**（$2+\mathcal{L}$ 维）：仅优化广义坐标 $q = [q_b^T, q_m^T]^T \in \mathbb{R}^{2+\mathcal{L}}$（省去底盘朝向 $\psi$），利用差速底盘微分平坦性，由平面位置导数与前进/倒车标志 $\eta \in \{-1, 1\}$ 直接反解朝向、左右轮角速度 $\omega_{l(r)}$ 与轮角加速度 $\alpha_{l(r)}$：
 
-$$
-\psi = \operatorname{atan2}(\eta \dot{q}_y, \eta \dot{q}_x)
-$$
+```math
+\psi = \mathrm{atan2}(\eta \dot{q}_y, \eta \dot{q}_x)
+```
 
-$$
+```math
 \omega_{l(r)} = \frac{1}{2r_w}\left(2\eta \Vert \dot{q}_b \Vert_2 \mp d_w \omega_b\right), \quad \alpha_{l(r)} = \frac{1}{2r_w}\left(2\eta \frac{\dot{q}_b^T \ddot{q}_b}{\Vert \dot{q}_b \Vert_2} \mp d_w \alpha_b\right)
-$$
+```
 
-其中 $r_w$ 为车轮半径，$d_w$ 为轮距，$\omega_b, \alpha_b$ 为底盘角速度与角加速度（推导 $\alpha_b$ 会用到位置三阶导 $\dddot{q}_b$）。
+其中 $r_w$ 为车轮半径，$d_w$ 为轮距，$\omega_b, \alpha_b$ 为底盘角速度与角加速度（推导 $\alpha_b$ 会用到位置三阶导 $q_b^{(3)}$）。
 
 #### 2. 全身多球体碰撞包络
 
 将底盘（记为连杆 $0$）和 $\mathcal{L}$ 个机械臂连杆统一包络为碰撞球集合。连杆 $l$ 上第 $m$ 个碰撞球（半径 $r_l$）球心的世界系坐标由正向运动学给出：
 
-$$
-{}^{\mathcal{W}}p_{l,m} = {}^{\mathcal{W}}T_l \, {}^lp_{l,m}, \quad \forall l \in \{0, 1, \dots, \mathcal{L}\}, \; \forall m \in \{1, \dots, m_l\}
-$$
+```math
+{}^{\mathcal{W}}p_{l,m} = {}^{\mathcal{W}}T_l \, {}^lp_{l,m}, \quad \forall l \in \{0, 1, \dots, \mathcal{L}\}, \quad \forall m \in \{1, \dots, m_l\}
+```
 
 ### 二、 前端：环境自适应路径搜索（Sec. IV）
 
@@ -380,15 +380,15 @@ $$
 
 与前端切出的 $N$ 个正/倒车子段一一对应，整条全身轨迹划分为 $N$ 段；第 $i$ 段由 $M_i$ 拍、$(2+\mathcal{L})$ 维、$2s-1$ 次分段多项式构成：
 
-$$
+```math
 q_{i,j}(t) = c_{i,j}^T \beta(t - \overline{T}_{i,j-1}), \quad t \in [\overline{T}_{i,j-1}, \overline{T}_{i,j}], \quad \beta(t) = [1, t, \dots, t^{2s-1}]^T
-$$
+```
 
 其中系数矩阵 $c_{i,j} \in \mathbb{R}^{2s \times (2+\mathcal{L})}$，累计时间戳 $\overline{T}_{i,j} = \sum_{k=1}^j T_{i,k}$。利用 MINCO 解耦优化变量与采样点规模，并通过约束转录将不等式约束化为软惩罚求解（原文公式 3、4）：
 
-$$
+```math
 \min J = \sum_{i=1}^N \left( J_{s,i} + J_{T,i} + J_{p,i} \right)
-$$
+```
 
 **控制努力平滑项：** $J_{s,i} = \int_0^{T_i} q_i^{(s)}(t)^T q_i^{(s)}(t) \, dt$
 
@@ -402,23 +402,23 @@ $$
 
    **ESDF 环境避障：** 球心处距离场读数须大于球半径（底盘朝向依赖 $\dot{q}_b$，故球心位置是 $(q, \dot{q}_b)$ 的函数）：
 
-   $$
+   ```math
    \mathcal{G}_{s_o}(q, \dot{q}_b) = r_l - D_{\text{ESDF}}\left({}^{\mathcal{W}}p_{l,m}(q, \dot{q}_b)\right) \le 0
-   $$
+   ```
 
    **全身自碰撞：** 直接在连杆 $l'$ 局部坐标系下计算球心距，**仅与机械臂关节角** $q_m$ **有关**，与底盘位姿无关，减少求导计算量：
 
-   $$
+   ```math
    \mathcal{G}_{s_c}(q_m) = r_{l'} + r_l - \Vert {}^{l'}p_{l',i} - {}^{l'}T_l \, {}^lp_{l,j} \Vert_2 \le 0, \quad \forall l' < l
-   $$
+   ```
 
 2. **动力学可行性约束（Feasibility）**
 
    **左右车轮速度与角加速度限幅：**
 
-   $$
-   \mathcal{G}_{\omega_{l(r)}}(\dot{q}_b, \ddot{q}_b) = \omega_{l(r)}^2 - \omega_{w,\max}^2 \le 0, \quad \mathcal{G}_{\alpha_{l(r)}}(\dot{q}_b, \ddot{q}_b, \dddot{q}_b) = \alpha_{l(r)}^2 - \alpha_{w,\max}^2 \le 0
-   $$
+   ```math
+   \mathcal{G}_{\omega_{l(r)}}(\dot{q}_b, \ddot{q}_b) = \omega_{l(r)}^2 - \omega_{w,\max}^2 \le 0, \quad \mathcal{G}_{\alpha_{l(r)}}(\dot{q}_b, \ddot{q}_b, q_b^{(3)}) = \alpha_{l(r)}^2 - \alpha_{w,\max}^2 \le 0
+   ```
 
    **机械臂关节限幅：** 关节位置 $q_l - q_{l,\max} \le 0$、$q_{l,\min} - q_l \le 0$；角速度 $\dot{q}_l^2 - \omega_{l,\max}^2 \le 0$；角加速度 $\ddot{q}_l^2 - \alpha_{l,\max}^2 \le 0$。
 
@@ -428,9 +428,9 @@ $$
 
    **末端姿态容差（由旋转矩阵迹求最小旋转轴角误差）：**
 
-   $$
-   \mathcal{G}_{t_o}(q) = \arccos\left(\frac{1}{2}\left(\operatorname{tr}({}^{\mathcal{W}}R_t^T \, {}^{\mathcal{W}}R_e) - 1\right)\right) - d_o \le 0
-   $$
+   ```math
+   \mathcal{G}_{t_o}(q) = \arccos\left(\frac{1}{2}\left(\mathrm{tr}({}^{\mathcal{W}}R_t^T \, {}^{\mathcal{W}}R_e) - 1\right)\right) - d_o \le 0
+   ```
 
 ### 四、 实验设置与对比分析
 
